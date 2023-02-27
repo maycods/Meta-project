@@ -1,4 +1,4 @@
-package TP1;
+package EXOS;
 
 import java.util.*;
 
