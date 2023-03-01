@@ -1,6 +1,5 @@
-package TP1;
+package Main;
 
-import java.util.HashSet;
 import java.util.Set;
 
 public class Tuple {
