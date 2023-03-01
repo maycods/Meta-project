@@ -41,7 +41,9 @@ jobs:
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
+            name: test
           # tauri-action replaces \_\_VERSION\_\_ with the app version
+            path: target/${{ steps.create_executable.outputs.jar_name }}
             tagName: ${{ github.ref_name }}
             releaseName: "Sample Release for Modern Desktop App v__VERSION__"
             releaseBody: |
