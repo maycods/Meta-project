@@ -31,7 +31,7 @@ jobs:
         echo "::set-output name=jar_name::myapp-${{ github.ref_name }}.jar"
     - name: Create Executable
       run: |
-        chmod +x target/*.jar
+        chmod +x target/${{ steps.build_java_maven_project.outputs.jar_name }}
         echo "::set-output name=jar_name::myapp-${{ github.ref_name }}.jar"
     - name: Upload JAR File
       uses: actions/upload-artifact@v2
