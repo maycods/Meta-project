@@ -5,24 +5,18 @@ import java.io.IOException;
 import static java.lang.Integer.parseInt;
 
         import javafx.application.Application;
-        import javafx.fxml.FXML;
-        import javafx.fxml.FXMLLoader;
+import javafx.fxml.FXMLLoader;
         import javafx.scene.Node;
-        import javafx.scene.Scene;
+import javafx.scene.Scene;
         import javafx.scene.control.*;
         import javafx.scene.layout.*;
         import javafx.scene.paint.Color;
         import javafx.scene.shape.Rectangle;
         import javafx.scene.text.Text;
         import javafx.stage.Stage;
-        import org.controlsfx.control.textfield.TextFields;
 
 
-        import java.io.IOException;
-        import java.util.Arrays;
-        import java.util.List;
-
-        import static java.lang.Integer.parseInt;
+import static java.lang.Integer.parseInt;
 class ChessBoard extends GridPane {
     public ChessBoard(int size) {
 
@@ -41,7 +35,7 @@ class ChessBoard extends GridPane {
 public class  Interface  extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("interfacejava.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfacejava.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setScene(scene);
         stage.show();
