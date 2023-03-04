@@ -1,4 +1,4 @@
-package Main;
+package GUI;
 
 import java.io.IOException;
 

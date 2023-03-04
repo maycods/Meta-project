@@ -157,7 +157,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.3</version>
                 <configuration>
-                    <mainClass>Main.Interface</mainClass>
+                    <mainClass>GUI.Interface</mainClass>
                 </configuration>
             </plugin>
         </plugins>
