@@ -17,20 +17,6 @@ import javafx.scene.Scene;
 
 
 import static java.lang.Integer.parseInt;
-class ChessBoard extends GridPane {
-    public ChessBoard(int size) {
-
-        int squareSize = 50;
-
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                Rectangle square = new Rectangle(squareSize, squareSize);
-                square.setFill((i + j) % 2 == 0 ? Color.WHITE : Color.BLACK);
-                add(square, i, j);
-            }
-        }
-    }
-}
 
 public class  Interface  extends Application {
     @Override
