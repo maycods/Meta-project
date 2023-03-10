@@ -15,7 +15,7 @@ public class Main {
         //
 
         BFS bfs = new BFS();
-        Node.n =10;
+        Node.n =12;
         long start = System.nanoTime();
         bfs.Recherche(new Node(new int[0]));
         long end = System.nanoTime();

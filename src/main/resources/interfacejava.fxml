@@ -100,7 +100,7 @@
                 <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
               </textFill>
             </Label>
-                  <MenuButton fx:id="choose" layoutX="116.0" layoutY="207.0" mnemonicParsing="false" text="none">
+                  <MenuButton  fx:id="choose" layoutX="116.0" layoutY="207.0" mnemonicParsing="false" text="none">
                     <items>
                       <MenuItem fx:id="b" mnemonicParsing="false" text="BFS" />
                       <MenuItem fx:id="d" mnemonicParsing="false" text="DFS" />
@@ -109,9 +109,9 @@
                     </items>
                   </MenuButton>
                   <Button fx:id="go" layoutX="63.0" layoutY="311.0" mnemonicParsing="false" text="Lest's go" />
-                  <Text layoutX="11.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer un la taille de l echiquier" />
+                  <Text  layoutX="11.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer un la taille de l echiquier" />
                   <Text layoutX="13.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a method: " />
-                  <TextField fx:id="taille" layoutX="11.0" layoutY="110.0" prefHeight="26.0" prefWidth="118.0" promptText="de 2 a 9" />
+                  <TextField  fx:id="taille" layoutX="11.0" layoutY="110.0" prefHeight="26.0" prefWidth="118.0" promptText="de 2 a 9" />
                   <Button fx:id="ok" layoutX="139.0" layoutY="110.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="35.0" text="ok" />
           </children>
         </AnchorPane>

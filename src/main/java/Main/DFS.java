@@ -30,20 +30,17 @@ public class DFS {
 //            ferme.add(n);
             if(n.verification())
             {
-
                 int eva = n.evaluation();
                 if (eva < bestSolEvaluation) {
+//                    if (eva  == 0) {
                     bestSol=n.getEtat()  ;
                     bestSolEvaluation = eva;
                 }
             }
 
             if (n.successeurs()) {
-
-
                 pile.addAll(n.getNoeudEnfants());
-
             }
-        }
+            }
     }
 }

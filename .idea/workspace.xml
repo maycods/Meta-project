@@ -9,7 +9,10 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/BFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/DFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,15 +200,6 @@
           <line>7</line>
           <properties field="list" class="TP.TP2.EXO2" />
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/Main/Node.java</url>
-          <line>77</line>
-          <properties class="Main.Node" method="successeurs">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
