@@ -16,7 +16,6 @@ class ChessBoard extends GridPane {
         var cream = Color.web("#ebebd3");
         var green= Color.web("#749454");
 
-        System.out.println(Arrays.toString(sol));
 
         var blackQueenImg = new ImagePattern(new Image("/blackqueen.png"));
         int squareSize = 55;

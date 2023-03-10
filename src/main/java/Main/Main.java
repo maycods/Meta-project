@@ -21,7 +21,7 @@ public class Main {
         Node a =new Node(bfs.getBestSol());
 
 
-        Node a =new Node(bfs.getBestSol());
+
 
         System.out.println(Arrays.toString(bfs.getBestSol()) +" evaluation : "+a.evaluation());
 
