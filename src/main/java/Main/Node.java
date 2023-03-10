@@ -6,32 +6,40 @@ public class Node {
 
         public static int n ;
         private ArrayList<Integer> Etat ;
-        private ArrayList<Node> NoeudsEnfants=new ArrayList<Node>();
-        private Node NoeudParent;
+//        private ArrayList<Node> NoeudsEnfants=new ArrayList<Node>();
+//        private Node NoeudParent;
+        private int[] etat ;
+//        ArrayList<Integer> etat;
+//        private final Set<Node> NoeudsEnfants=new HashSet<Node>();
 
-        public Boolean verification(){
-            if (Etat.size()!= n) return false;
-
+    public Boolean verification(){
+            if (etat.length!= n) return false;
+//            System.out.println(etat);
             int i=0;
 
             while(i<n){
-                 if(!Etat.contains(i)) return false;
+                 if(!contains(etat, i)) return false;
                 i++;
             }
             return true;
         }
         public int evaluation(){
-Boolean b;
-            if(Etat.isEmpty()) {return n;}
+            Boolean b;
+            if(etat.length == 0) {return n;}
             int cpt=0,x,l,j,p;
             int[][] M = new int[n][n];
-            for (int i = 0; i < n; i++) {
-                for (int m = 0; m < n; m++) {
-                        M[i][m] = (m == Etat.get(i))? 1 : 0;
-                }
+//            System.out.printli(M[3][4]);
+            //array is already initialized with 0s already
+            for (int i = 0; i< etat.length; i++){
+                M[i][etat[i]] = 1;
             }
+//            for (int i = 0; i < n; i++) {
+//                for (int m = 0; m < n; m++) {
+//                        M[i][m] = (m == etat[i])? 1 : 0;
+//                }
+//            }
             for (int i = 0; i < n; i++) {
-                x = Etat.get(i);
+                x = etat[i];
                 ////////
                 int k = 0;
                 Boolean c;
@@ -51,8 +59,10 @@ Boolean b;
                         if (k == 0) {
                             j++;
                             c = (j < n);
-                        } else {j--;
-                            c = (j >= 0);}
+                        } else {
+                            j--;
+                            c = (j >= 0);
+                        }
                         l = l + 1;
                         p = p - 1;
                     }
@@ -67,49 +77,48 @@ Boolean b;
 
         public Boolean successeurs(){
 
-            if(Etat.size() == n) return false;
-            for(int i=0;i<n;i++) {
-                if(!Etat.contains(i)){
-                    ArrayList<Integer> a =  (ArrayList<Integer>) Etat.clone();
-                    a.add(i);
-                    NoeudsEnfants.add(new Node( a,this));
-                }
-            }
+            if(etat.length == n) return false;
+
             return true;
         }
 
-
-        public Node(ArrayList<Integer> Etat,Node noeudParent) {
-            this.Etat = Etat;
-            NoeudParent = noeudParent;
-        }
-        public ArrayList<Integer> getEtat() {
-            return Etat;
-        }
-        public ArrayList<Node> getNoeudEnfants() {
-            return NoeudsEnfants;
+        private boolean contains(int[] list, int val){
+            for (int i = 0; i < list.length; i++) {
+                if (list[i] == val) {
+                    return true;
+                }
+            }
+            return false;
         }
 
-   /* private  T valeur;
-    private Set<Node<T>> voisins = new HashSet<>();
-    public Node (T valeur){
-        this.valeur = valeur;
-        this.voisins = new HashSet<>();
+    public static int[] copyWithIncreasedSize(int[] original, int newElement) {
+        int[] copy = new int[original.length + 1]; // create new array with one more element
+        for (int i = 0; i < original.length; i++) {
+            copy[i] = original[i]; // copy elements from original array
+        }
+        copy[original.length] = newElement; // add new element to the end
+        return copy;
     }
-    public void connect(Node<T> n){
-        if (this == n) throw new IllegalArgumentException("Can't connect node to itself");
-        this.voisins.add(n);
-        n.voisins.add(this);
-    }
+        public Node(int[] etat) {
+            this.etat = etat;
+        }
+        public int[] getEtat() {
+            return etat;
+        }
+        public Set<Node> getNoeudEnfants() {
+            Set<Node> childs  = new HashSet<Node>();
+            for(int i=0;i<n;i++) {
+                if(!contains(etat,i)){
+//                    int[] a = etat.clone();
+                    int[] a = copyWithIncreasedSize(etat, i);
+//                    System.out.println(etat.length);
+//                    a[etat.length + 1] =i;
+                    childs.add(new Node( a));
+                }
+            }
+            return childs;
+        }
 
-    public T getValeur() {
-        return valeur;
-    }
-    public Set<Node<T>> getVoisins() {
-        return voisins;
-    }
-
-*/
 
 }
 

@@ -5,32 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25973f5d-366a-44cc-93fc-dad51f19f35a" name="Changes" comment="removing the exo1">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/release.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/release.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/AlgorithmAveugle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/AlgorithmAveugle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/BFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Tuple.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP1/EXO1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP1/EXO1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/DFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/EXO2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/EXO2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/DFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Noeud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Patitionnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Patitionnement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="performance" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
@@ -59,6 +43,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2M3mcNqYH7mpL5YK3DJ8OHI9iqe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -67,22 +58,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/IdeaProjects/Meta/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\HP\IdeaProjects\Meta\src\main\resources" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\HP\IdeaProjects\Meta\src\main\resources" />
       <recent name="C:\Users\HP\IdeaProjects\Meta\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Interface">
     <configuration name="Interface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="14" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="GUI.Interface" />
-      <module name="Meta-projet" />
+      <module name="Meta" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
@@ -94,8 +99,10 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="14" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main.Main" />
-      <module name="Meta-projet" />
+      <module name="Meta" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Main.*" />
@@ -108,8 +115,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Interface" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Interface" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -132,6 +142,9 @@
       <workItem from="1677932072457" duration="794000" />
       <workItem from="1677957417307" duration="20477000" />
       <workItem from="1678054197227" duration="1542000" />
+      <workItem from="1678439381264" duration="77000" />
+      <workItem from="1678439626680" duration="3181000" />
+      <workItem from="1678442832330" duration="1252000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1677489730062</created>
@@ -170,7 +183,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
@@ -185,6 +197,15 @@
           <line>7</line>
           <properties field="list" class="TP.TP2.EXO2" />
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/Main/Node.java</url>
+          <line>77</line>
+          <properties class="Main.Node" method="successeurs">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
