@@ -111,7 +111,6 @@ public class  Interface  extends Application {
                 ap.getChildren().clear();
                 ap.getChildren().add(chessBoard);
             }
-            i++;
 
         });
 
