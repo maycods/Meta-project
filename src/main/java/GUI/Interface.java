@@ -8,22 +8,17 @@ import Main.BFS;
 import Main.DFS;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Camera;
 import javafx.scene.Node;
 import javafx.scene.Scene;
         import javafx.scene.control.*;
         import javafx.scene.layout.*;
 import javafx.scene.text.Text;
-        import javafx.stage.Stage;
+import javafx.stage.Stage;
 
 
-import static java.lang.Integer.parseInt;
 
 public class  Interface  extends Application {
-    int taille;
-    int[] Sol;
     Node content;
-    ChessBoard chessBoard;
     AnchorPane ap;
     ScrollPane sp;
     @Override
@@ -34,7 +29,12 @@ public class  Interface  extends Application {
         stage.setScene(scene);
         stage.show();
         stage.setTitle("N-REINES");
-
+        // Set the width of the stage to the screen width
+//        Screen screen = Screen.getPrimary();
+//        Rectangle2D bounds = screen.getVisualBounds();
+//        stage.setWidth(bounds.getWidth());
+//        stage.setHeight(bounds.getHeight());
+        stage.setFullScreen(true);
 
         Button Go = (Button) scene.lookup("#go");
         MenuButton choix = (MenuButton)scene.lookup("#choose");
