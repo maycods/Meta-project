@@ -31,7 +31,7 @@ public class BFS {
 //                Node k = new Node(bestSol);
                 int eva = n.evaluation();
                 if (eva < bestSolEvaluation) {
-//                    if (eva == 0) {
+
                     bestSol=n.getEtat()  ;
                     bestSolEvaluation = eva;
                 }
