@@ -112,8 +112,7 @@
                   <Text  layoutX="11.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrer un la taille de l echiquier" />
                   <Text layoutX="13.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select a method: " />
                   <TextField  fx:id="taille" layoutX="11.0" layoutY="110.0" prefHeight="26.0" prefWidth="118.0" promptText="de 2 a 9" />
-                  <Button fx:id="ok" layoutX="139.0" layoutY="110.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="35.0" text="ok" />
-          </children>
+                    </children>
         </AnchorPane>
         <ScrollPane fx:id="t" prefHeight="-1.0" prefWidth="-1.0">
           <content>

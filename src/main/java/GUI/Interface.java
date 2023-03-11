@@ -39,7 +39,6 @@ public class  Interface  extends Application {
         Button Go = (Button) scene.lookup("#go");
         MenuButton choix = (MenuButton)scene.lookup("#choose");
         TextField textField = (TextField)scene.lookup("#taille");
-        Button OK =(Button) scene.lookup("#ok");
         Text  INFOS = (Text)scene.lookup("#data");
 
         INFOS.setText("Infos:\n NOMBRE DE NOEUDS GENERE\n NOMBRE DE NOEUDS DEVELOPE\n");
@@ -49,9 +48,7 @@ public class  Interface  extends Application {
         MenuItem h1=choix.getItems().get(2);
         MenuItem h2=choix.getItems().get(3);
 
-        OK.setOnAction(event -> {
 
-        });
 
         dfs.setOnAction(event -> {
             choix.setText(dfs.getText());
@@ -81,37 +78,50 @@ public class  Interface  extends Application {
             sp= (ScrollPane) scene.lookup("#t");
             content = sp.getContent();
             String newText = textField.getText(); // Retrieve the updated value of the text field
-            /***todo add exception user**/
-            int a = parseInt(newText);
-            Main.Node.n = a;
-            int[] bestSol  ;
 
-            switch (choix.getText()){
-                case "DFS":
-                    DFS algoDfs = new DFS();
-                    algoDfs.Recherche(new Main.Node(new int[0]));
-                    bestSol = algoDfs.getBestSol();
-                    break;
-                case "BFS":
-                    BFS algoBfs = new BFS();
-                    algoBfs.Recherche(new Main.Node(new int[0]));
-                    bestSol = algoBfs.getBestSol();
-                    break;
-                default:
-                    bestSol = new int[a];
+
+                int a = parseInt(newText);
+                Main.Node.n = a;
+                int[] bestSol;
+
+            if(a>12){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Espace insuffisant");
+                alert.setHeaderText(null);
+                alert.setContentText("La machine ne supporte pas une taille d'echiquier aussi grande");
+                alert.getButtonTypes().setAll(ButtonType.OK);
+                alert.showAndWait().ifPresent(response -> {
+                    if (response == ButtonType.OK) {
+                        ap.getChildren().clear();
+                    }
+                });
+            }else {
+                switch (choix.getText()) {
+                    case "DFS":
+                        DFS algoDfs = new DFS();
+                        algoDfs.Recherche(new Main.Node(new int[0]));
+                        bestSol = algoDfs.getBestSol();
+                        break;
+                    case "BFS":
+                        BFS algoBfs = new BFS();
+                        algoBfs.Recherche(new Main.Node(new int[0]));
+                        bestSol = algoBfs.getBestSol();
+                        break;
+                    default:
+                        bestSol = new int[a];
+                }
+                ChessBoard chessBoard = new ChessBoard(a, bestSol);
+
+                if (content instanceof AnchorPane) {
+               ap = (AnchorPane) content;
+                    AnchorPane.setTopAnchor(chessBoard, 0.0);
+                    AnchorPane.setBottomAnchor(chessBoard, 0.0);
+                    AnchorPane.setRightAnchor(chessBoard, 0.0);
+                    AnchorPane.setLeftAnchor(chessBoard, 0.0);
+                    ap.getChildren().clear();
+                    ap.getChildren().add(chessBoard);
+                }
             }
-            ChessBoard chessBoard = new ChessBoard(a, bestSol);
-
-            if (content instanceof AnchorPane) {
-                AnchorPane ap = (AnchorPane) content;
-                AnchorPane.setTopAnchor(chessBoard, 0.0);
-                AnchorPane.setBottomAnchor(chessBoard, 0.0);
-                AnchorPane.setRightAnchor(chessBoard, 0.0);
-                AnchorPane.setLeftAnchor(chessBoard, 0.0);
-                ap.getChildren().clear();
-                ap.getChildren().add(chessBoard);
-            }
-
         });
 
 
