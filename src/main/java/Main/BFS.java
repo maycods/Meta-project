@@ -1,6 +1,8 @@
 package Main;
 
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 //***Todo nombre de noeud generé et nbr de noeud develope
@@ -24,16 +26,20 @@ public class BFS {
         while (!ouvert.isEmpty()){
 
             n=ouvert.poll( );
+//            System.out.println(Arrays.toString(n.getEtat()));
 //            ferme.add(n);
             if(n.verification())
             {
 
 //                Node k = new Node(bestSol);
                 int eva = n.evaluation();
-                if (eva < bestSolEvaluation) {
+//                int eva =n.evaluation2();
+//                n.evaluation2();
+                if (eva ==0 ) {
 
                     bestSol=n.getEtat()  ;
                     bestSolEvaluation = eva;
+                    break;
                 }
             }
 

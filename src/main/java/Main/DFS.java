@@ -33,10 +33,10 @@ public class DFS {
 
 
                 int eva = n.evaluation();
-                if (eva < bestSolEvaluation) {
-
+                if (eva  ==0) {
                     bestSol=n.getEtat()  ;
                     bestSolEvaluation = eva;
+                    break;
                 }
             }
 

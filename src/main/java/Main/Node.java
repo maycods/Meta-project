@@ -32,9 +32,6 @@ public class Node {
             for (int i = 0; i< etat.length; i++){
                 M[i][etat[i]] = 1;
             }
-  
-
-
             for (int i = 0; i < n; i++) {
                 x = etat[i];
                 ////////
@@ -72,6 +69,7 @@ public class Node {
              return cpt;
         }
 
+
         public Boolean successeurs(){
 
             if(etat.length == n) return false;
@@ -106,8 +104,12 @@ public class Node {
 
         public Set<Node> getNoeudEnfants() {
             Set<Node> childs  = new HashSet<Node>();
+//            System.out.println(Arrays.toString(etat));
             for(int i=0;i<n;i++) {
-                if(!contains(etat,i)){
+                if (isValid(i)){
+
+//                }
+//                if(!contains(etat,i)){
 //                    int[] a = etat.clone();
                     int[] a = copyWithIncreasedSize(etat, i);
 //                    System.out.println(etat.length);
@@ -116,6 +118,14 @@ public class Node {
                 }
             }
             return childs;
+        }
+        private boolean isValid(int col){
+
+            for (int i = 0;i< etat.length; i++){
+                if (etat[i] == col)return false;
+                if (etat.length -i == Math.abs(col - etat[i]))return false;
+            }
+            return true;
         }
 
 

@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25973f5d-366a-44cc-93fc-dad51f19f35a" name="Changes" comment="removing the exo1" />
+    <list default="true" id="25973f5d-366a-44cc-93fc-dad51f19f35a" name="Changes" comment="removing the exo1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/BFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/DFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Node.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +60,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "last_opened_file_path": "C:/Users/HP/IdeaProjects/TPEcom",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
@@ -66,7 +73,7 @@
       <recent name="C:\Users\HP\IdeaProjects\Meta\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Interface">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Interface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="14" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -99,8 +106,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Interface" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Interface" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Interface" />
         <item itemvalue="Application.Main" />
