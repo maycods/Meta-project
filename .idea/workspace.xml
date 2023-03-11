@@ -5,11 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25973f5d-366a-44cc-93fc-dad51f19f35a" name="Changes" comment="removing the exo1">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/release.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/release.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_10_2023_11_36_AM_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_10_2023_11_36_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Algorithms/AlgorithmAveugle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Algorithms/AlgorithmAveugle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/ChessBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/Interface.java" afterDir="false" />
+>>>>>>> 75b969286707a87fbd2a1e542fd69d93919344b4
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/BFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/DFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Node.java" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Tuple.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Tuple.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP1/EXO1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP1/EXO1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/DFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/EXO2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/EXO2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/Noeud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/DFS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Noeud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Patitionnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Patitionnement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/queenblanch.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/queenblanch.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/queenblck_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/queenblck_1.txt" afterDir="false" />
+>>>>>>> 75b969286707a87fbd2a1e542fd69d93919344b4
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,13 +76,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2M3mcNqYH7mpL5YK3DJ8OHI9iqe" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -58,12 +84,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "last_opened_file_path": "C:/Users/HP/IdeaProjects/TPEcom",
     "node.js.selected.package.tslint": "(autodetect)"
   }
 }]]></component>
+=======
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+>>>>>>> 75b969286707a87fbd2a1e542fd69d93919344b4
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\HP\IdeaProjects\Meta\src\main\resources" />
@@ -73,12 +105,14 @@
       <recent name="C:\Users\HP\IdeaProjects\Meta\src\main\java" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.Main">
+=======
+  <component name="RunManager">
+>>>>>>> 75b969286707a87fbd2a1e542fd69d93919344b4
     <configuration name="Interface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="14" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="GUI.Interface" />
-      <module name="Meta" />
+      <module name="Meta-projet" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="GUI.*" />
@@ -89,28 +123,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="14" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="Main.Main" />
-      <module name="Meta" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Interface" />
         <item itemvalue="Application.Main" />
+=======
         <item itemvalue="Application.Interface" />
-        <item itemvalue="Application.Main" />
+>>>>>>> 75b969286707a87fbd2a1e542fd69d93919344b4
+        <item itemvalue="Application.Interface" />
       </list>
     </recent_temporary>
   </component>
@@ -140,6 +162,7 @@
       <workItem from="1678451817206" duration="211000" />
       <workItem from="1678452062901" duration="784000" />
       <workItem from="1678452947229" duration="4795000" />
+      <workItem from="1678534727043" duration="137000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1677489730062</created>
@@ -178,6 +201,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit" />
