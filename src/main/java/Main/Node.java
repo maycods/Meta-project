@@ -104,28 +104,14 @@ public class Node {
 
         public Set<Node> getNoeudEnfants() {
             Set<Node> childs  = new HashSet<Node>();
-//            System.out.println(Arrays.toString(etat));
             for(int i=0;i<n;i++) {
-                if (isValid(i)){
 
-//                }
-//                if(!contains(etat,i)){
-//                    int[] a = etat.clone();
+                if(!contains(etat,i)){
                     int[] a = copyWithIncreasedSize(etat, i);
-//                    System.out.println(etat.length);
-//                    a[etat.length + 1] =i;
                     childs.add(new Node( a));
                 }
             }
             return childs;
-        }
-        private boolean isValid(int col){
-
-            for (int i = 0;i< etat.length; i++){
-                if (etat[i] == col)return false;
-                if (etat.length -i == Math.abs(col - etat[i]))return false;
-            }
-            return true;
         }
 
 
