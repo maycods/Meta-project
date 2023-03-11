@@ -10,44 +10,30 @@ import java.util.Stack;
 public class DFS {
         private Stack<Node> pile = new Stack<>();
 //    private ArrayList<Node> ferme= new ArrayList<Node>();
-    private int[] bestSol=new int[Node.n];
-
-    private int bestSolEvaluation = Integer.MAX_VALUE;
-    public int[] getBestSol(){
-        return this.bestSol;
-    }
+public  int nbrNdev=0,nbrNgen =1;
+    int sizeInitial;
 
     public DFS() {}
-    public void Recherche( Node G){
+    public int [] Recherche( Node G){
 
         Node d=G , n;
 
         pile.add(d);
 
             while (!pile.isEmpty()){
-
+                nbrNdev++;
                 n=pile.pop();
 //            ferme.add(n);
-            if(n.verification())
-            {
 
-
-                int eva = n.evaluation();
-                if (eva < bestSolEvaluation) {
-
-                    bestSol=n.getEtat()  ;
-                    bestSolEvaluation = eva;
-                }
-            }
+                if(n.verification() && n.evaluation()==0){ return n.getEtat();}
 
             if (n.successeurs()) {
 
-
-
+                sizeInitial =pile.size();
                 pile.addAll(n.getNoeudEnfants());
-
+                nbrNgen=nbrNgen+(pile.size() - sizeInitial);
             }
         }
-
+return null;
     }
 }

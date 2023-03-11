@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25973f5d-366a-44cc-93fc-dad51f19f35a" name="Changes" comment="removing the exo1">
+    <list default="true" id="22c501b5-fa59-406f-b194-64f65b84bf4b" name="Changes" comment="removing the exo1">
       <change beforePath="$PROJECT_DIR$/.github/workflows/maven.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/maven.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/release.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/release.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
@@ -113,7 +113,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="25973f5d-366a-44cc-93fc-dad51f19f35a" name="Changes" comment="" />
+      <changelist id="22c501b5-fa59-406f-b194-64f65b84bf4b" name="Changes" comment="removing the exo1" />
       <created>1677004720994</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -137,6 +137,7 @@
       <workItem from="1678452062901" duration="784000" />
       <workItem from="1678452947229" duration="4795000" />
       <workItem from="1678534727043" duration="137000" />
+      <workItem from="1678577078614" duration="1222000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1677489730062</created>

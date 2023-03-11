@@ -105,7 +105,7 @@ public class Node {
         }
 
         public Set<Node> getNoeudEnfants() {
-            Set<Node> childs  = new HashSet<Node>();
+            Set<Node> childs  = new LinkedHashSet<Node>();
             for(int i=0;i<n;i++) {
                 if(!contains(etat,i)){
 //                    int[] a = etat.clone();
