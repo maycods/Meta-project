@@ -21,6 +21,8 @@ public class  Interface  extends Application {
     Node content;
     AnchorPane ap;
     ScrollPane sp;
+    long start,end;
+    int dev,gen;
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -41,7 +43,6 @@ public class  Interface  extends Application {
         TextField textField = (TextField)scene.lookup("#taille");
         Text  INFOS = (Text)scene.lookup("#data");
 
-        INFOS.setText("Infos:\n NOMBRE DE NOEUDS GENERE\n NOMBRE DE NOEUDS DEVELOPE\n");
 
         MenuItem bfs = choix.getItems().get(0);
         MenuItem dfs=choix.getItems().get(1);
@@ -84,11 +85,11 @@ public class  Interface  extends Application {
                 Main.Node.n = a;
                 int[] bestSol;
 
-            if(a>12){
+            if(a<8){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Espace insuffisant");
+                alert.setTitle("trop petit n");
                 alert.setHeaderText(null);
-                alert.setContentText("La machine ne supporte pas une taille d'echiquier aussi grande");
+                alert.setContentText("entrez une taille d'echiquier plus grande");
                 alert.getButtonTypes().setAll(ButtonType.OK);
                 alert.showAndWait().ifPresent(response -> {
                     if (response == ButtonType.OK) {
@@ -99,17 +100,27 @@ public class  Interface  extends Application {
                 switch (choix.getText()) {
                     case "DFS":
                         DFS algoDfs = new DFS();
-                        algoDfs.Recherche(new Main.Node(new int[0]));
-                        bestSol = algoDfs.getBestSol();
+                         start = System.currentTimeMillis();
+                       bestSol=  algoDfs.Recherche(new Main.Node(new int[0]));
+                         end = System.currentTimeMillis();
+                         dev=algoDfs.nbrNdev;
+                         gen=algoDfs.nbrNgen;
                         break;
                     case "BFS":
                         BFS algoBfs = new BFS();
-                        bestSol = algoBfs.Recherche(new Main.Node(new int[0]));
+
+                         start = System.currentTimeMillis();
+                        bestSol=algoBfs.Recherche(new Main.Node(new int[0]));
+                         end = System.currentTimeMillis();
+                        dev=algoBfs.nbrNdev;
+                        gen=algoBfs.nbrNgen;
+
                         break;
                     default:
                         bestSol = new int[a];
                 }
                 ChessBoard chessBoard = new ChessBoard(a, bestSol);
+                INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"NOMBRE DE NOEUDS GENERE "+gen+"\nNOMBRE DE NOEUDS DEVELOPE "+dev);
 
                 if (content instanceof AnchorPane) {
                ap = (AnchorPane) content;
