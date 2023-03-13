@@ -1,6 +1,7 @@
 package GUI;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import static java.lang.Integer.parseInt;
 
@@ -102,6 +103,7 @@ public class  Interface  extends Application {
                         DFS algoDfs = new DFS();
                          start = System.currentTimeMillis();
                        bestSol=  algoDfs.Recherche(new Main.Node(new int[0]));
+                        System.out.println(Arrays.toString(bestSol));
                          end = System.currentTimeMillis();
                          dev=algoDfs.nbrNdev;
                          gen=algoDfs.nbrNgen;

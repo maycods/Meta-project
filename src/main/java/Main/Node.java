@@ -1,17 +1,16 @@
 package Main;
 
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Node {
-
         public static int n ;
 
-
-        private int[] etat ;
-
+        private final int[] etat ;
 
     public Boolean verification(){
-            if (etat.length!= n) return false;
+            if (etat.length!= n) {
+                return false;};
 //            System.out.println(etat);
             int i=0;
 
@@ -20,6 +19,22 @@ public class Node {
                 i++;
             }
             return true;
+        }
+        //algorithm evaluation..
+        //check the column and the diagonal
+
+        public Boolean evaluation1(){
+        for (int i = 0; i< n-1; i++){
+            for (int j = i+1; j< etat.length; j++) {
+                //check the column
+                if (etat[i] == etat[j]){
+                    return false;}
+
+                //check all the diagonals
+                if (j-i == Math.abs(etat[i] - etat[j])) return false;
+            }
+        }
+        return true;
         }
 
         public int evaluation(){
@@ -102,18 +117,13 @@ public class Node {
             return etat;
         }
 
-        public Set<Node> getNoeudEnfants() {
-            Set<Node> childs  = new LinkedHashSet<Node>();
+        public List<Node> getNoeudEnfants() {
+            List<Node> childs  = new ArrayList<Node>();
             for(int i=0;i<n;i++) {
-
-                if(!contains(etat,i)){
                     int[] a = copyWithIncreasedSize(etat, i);
                     childs.add(new Node( a));
-                }
             }
             return childs;
         }
-
-
 }
 
