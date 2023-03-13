@@ -1,6 +1,5 @@
 package Main;
 
-
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
@@ -9,21 +8,18 @@ public class Main {
     public static void main(String[] args) {
 
         System.out.println("hello");
-        BFS bfs = new BFS();
-
-        Node.n =10;
-
+        DFS dfs = new DFS();
+        int [] best;
+        Node.n=11;
         long start = System.nanoTime();
-        bfs.Recherche(new Node(new int[0]));
+        best=dfs.Recherche(new Node(new int[0],0));
         long end = System.nanoTime();
-        System.out.println("time is : " + TimeUnit.MILLISECONDS.convert(end -start, TimeUnit.NANOSECONDS)/1000);
-
-       // Node a =new Node(bfs.getBestSol());
-
-
-
-
-        //System.out.println(Arrays.toString(bfs.getBestSol()) +" evaluation : "+a.evaluation());
+        for(int i=0;i<Node.n;i++){
+            System.out.println(best[i]);
+        }
+        /*Node.n=4;
+        Node a =new Node(new int[]{1,3,0,2});
+        System.out.println(a.evaluation());*/
 
     }
 }

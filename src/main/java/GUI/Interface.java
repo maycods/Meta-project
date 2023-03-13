@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import static java.lang.Integer.parseInt;
 
+import Main.Astar;
 import Main.BFS;
 import Main.DFS;
 import javafx.application.Application;
@@ -31,11 +32,6 @@ public class  Interface  extends Application {
         stage.setScene(scene);
         stage.show();
         stage.setTitle("N-REINES");
-        // Set the width of the stage to the screen width
-//        Screen screen = Screen.getPrimary();
-//        Rectangle2D bounds = screen.getVisualBounds();
-//        stage.setWidth(bounds.getWidth());
-//        stage.setHeight(bounds.getHeight());
         stage.setFullScreen(true);
 
         Button Go = (Button) scene.lookup("#go");
@@ -48,8 +44,6 @@ public class  Interface  extends Application {
         MenuItem dfs=choix.getItems().get(1);
         MenuItem h1=choix.getItems().get(2);
         MenuItem h2=choix.getItems().get(3);
-
-
 
         dfs.setOnAction(event -> {
             choix.setText(dfs.getText());
@@ -78,12 +72,12 @@ public class  Interface  extends Application {
 
             sp= (ScrollPane) scene.lookup("#t");
             content = sp.getContent();
-            String newText = textField.getText(); // Retrieve the updated value of the text field
+            String newText = textField.getText();
 
 
                 int a = parseInt(newText);
                 Main.Node.n = a;
-                int[] bestSol;
+                int[] bestSol=new int[0];
 
             if(a<8){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -96,7 +90,8 @@ public class  Interface  extends Application {
                         ap.getChildren().clear();
                     }
                 });
-            }else {
+            }else{
+
                 switch (choix.getText()) {
                     case "DFS":
                         DFS algoDfs = new DFS();
@@ -114,14 +109,30 @@ public class  Interface  extends Application {
                         dev=algoBfs.nbrNdev;
                         gen=algoBfs.nbrNgen;
                         break;
+                    case "h1":
+                        Astar A = new Astar();
+                        start = System.currentTimeMillis();
+                        bestSol=A.Recherche(new Main.Node(new int[0],0),1).getEtat();
+                        end = System.currentTimeMillis();
+                        dev=0;
+                        gen=0;
+                        break;
+                    case "h2":
+                        Astar B = new Astar();
+                        start = System.currentTimeMillis();
+                        bestSol=B.Recherche(new Main.Node(new int[0],0),2).getEtat();
+                        end = System.currentTimeMillis();
+                        dev=0;
+                        gen=0;
+                        break;
                     default:
                         bestSol = new int[a];
                 }
-                ChessBoard chessBoard = new ChessBoard(a, bestSol);
-                INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"NOMBRE DE NOEUDS GENERE "+gen+"\nNOMBRE DE NOEUDS DEVELOPE "+dev);
 
+                ChessBoard chessBoard = new ChessBoard(a, bestSol);
+                INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"Nombre de noeuds générés: "+gen+"\nNombre de noeuds developpés"+dev);
                 if (content instanceof AnchorPane) {
-               ap = (AnchorPane) content;
+                    ap = (AnchorPane) content;
                     AnchorPane.setTopAnchor(chessBoard, 0.0);
                     AnchorPane.setBottomAnchor(chessBoard, 0.0);
                     AnchorPane.setRightAnchor(chessBoard, 0.0);
@@ -131,8 +142,6 @@ public class  Interface  extends Application {
                 }
             }
         });
-
-
 
     }
     public static void main(String[] args) {
