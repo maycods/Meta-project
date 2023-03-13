@@ -28,7 +28,7 @@ public class  Interface  extends Application {
     public void start(Stage stage) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfacejava.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 800);
         stage.setScene(scene);
         stage.show();
         stage.setTitle("N-REINES");
@@ -37,7 +37,7 @@ public class  Interface  extends Application {
 //        Rectangle2D bounds = screen.getVisualBounds();
 //        stage.setWidth(bounds.getWidth());
 //        stage.setHeight(bounds.getHeight());
-        stage.setFullScreen(true);
+//        stage.setFullScreen(true);
 
         Button Go = (Button) scene.lookup("#go");
         MenuButton choix = (MenuButton)scene.lookup("#choose");
@@ -121,15 +121,15 @@ public class  Interface  extends Application {
                     default:
                         bestSol = new int[a];
                 }
-                ChessBoard chessBoard = new ChessBoard(a, bestSol);
                 INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"NOMBRE DE NOEUDS GENERE "+gen+"\nNOMBRE DE NOEUDS DEVELOPE "+dev);
 
                 if (content instanceof AnchorPane) {
                ap = (AnchorPane) content;
-                    AnchorPane.setTopAnchor(chessBoard, 0.0);
-                    AnchorPane.setBottomAnchor(chessBoard, 0.0);
-                    AnchorPane.setRightAnchor(chessBoard, 0.0);
-                    AnchorPane.setLeftAnchor(chessBoard, 0.0);
+                    ChessBoard chessBoard = new ChessBoard(a, bestSol,ap.getWidth(), ap.getHeight());
+//                    AnchorPane.setTopAnchor(chessBoard, 0.0);
+//                    AnchorPane.setBottomAnchor(chessBoard, 0.0);
+//                    AnchorPane.setRightAnchor(chessBoard, 0.0);
+//                    AnchorPane.setLeftAnchor(chessBoard, 0.0);
                     ap.getChildren().clear();
                     ap.getChildren().add(chessBoard);
                 }

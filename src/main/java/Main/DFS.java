@@ -22,7 +22,7 @@ public  int nbrNdev=0,nbrNgen =1;
                 n=pile.pop();
 
                 if (n.evaluation1()) {
-                    System.out.println(Arrays.toString(n.getEtat()));
+
                     if(n.verification() ){
                         return n.getEtat();
                     }
