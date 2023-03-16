@@ -18,13 +18,14 @@ public class BFS {
 
         while (!ouvert.isEmpty()){
             nbrNdev++;
-            n=ouvert.poll( );
+            n=ouvert.poll();
 
             if(n.verification() && n.evaluation()){ return n.getEtat();}
 
             if (n.successeurs()) {
+
                 sizeInitial =ouvert.size();
-                    ouvert.addAll(n.getNoeudEnfants());
+                ouvert.addAll(n.getNoeudEnfants());
                 nbrNgen=nbrNgen+(ouvert.size() - sizeInitial);
             }
         }

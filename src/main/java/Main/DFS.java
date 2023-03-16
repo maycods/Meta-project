@@ -22,9 +22,11 @@ public  int nbrNdev=0,nbrNgen =1;
                 if(n.verification() && n.evaluation()){ return n.getEtat();}
 
             if (n.successeurs()) {
+
                 sizeInitial =pile.size();
-                pile.addAll(n.getNoeudEnfants());
-                nbrNgen=nbrNgen+(pile.size() - sizeInitial);
+               // pile.addAll(n.getNoeudEnfants());
+                for(int i=0;i<n.getNoeudEnfants().size();i++) {pile.push(n.getNoeudEnfants().get(n.getNoeudEnfants().size()-i-1));}
+                nbrNgen+=(pile.size() - sizeInitial);
             }
         }
 return null;

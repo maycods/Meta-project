@@ -1,0 +1,40 @@
+.view-container {
+    -fx-background-color :  #342c2c;
+}
+.Button {
+    -fx-line-spacing: 1.2;
+    -fx-background-color : #749454;
+    -fx-fill: white; /* change "red" to the color you want */
+    -fx-font-weight: bold;
+    -fx-padding: 5px 8px;
+    -fx-font-family: "Arial";
+}
+.Button:hover{
+    -fx-line-spacing: 1.2;
+    -fx-background-color : #749454;
+    -fx-fill: white; /* change "red" to the color you want */
+    -fx-font-weight: bold;
+    -fx-padding: 5px 8px;
+    -fx-cursor: pointer ;
+}
+
+.Side-bar {
+    -fx-background-color :  #342c2c;
+}
+.text-class {
+    -fx-fill: white; /* change "red" to the color you want */
+    -fx-font-family: "Arial";
+    -fx-font-size : 20px;
+}
+.drop-down{
+    -fx-line-spacing: 1.2;
+    -fx-background-color : #749454;
+    -fx-fill: white; /* change "red" to the color you want */
+    -fx-font-weight: bold;
+    -fx-padding: 2px 5px;
+    -fx-font-family: "Arial";
+    -fx-font-size : 16px;
+}
+#content{
+    -fx-background-color :  #342c2c;
+}

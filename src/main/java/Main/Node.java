@@ -24,7 +24,6 @@ public class Node {
             for (int i = 0; i <etat.length; i++) {
                 for (int j = i + 1; j < etat.length; j++) {
 
-                    if (etat[i] == etat[j]){return false;}
                     if (j - i == Math.abs(etat[i] - etat[j])) return false;
                 }
             }
@@ -42,8 +41,10 @@ public class Node {
         public ArrayList<Node> getNoeudEnfants() {
            ArrayList<Node> childs  = new ArrayList<Node>();
             for(int i=0;i<n;i++) {
+                if (!contains(this.etat,i)){
                     int[] a = copyWithIncreasedSize(etat, i);
-                    childs.add(new Node(a,this.profondeur+1));
+                childs.add(new Node(a, this.profondeur + 1));
+                 }
             }
             return childs;
         }

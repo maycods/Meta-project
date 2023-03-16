@@ -28,11 +28,11 @@ public class  Interface  extends Application {
     public void start(Stage stage) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfacejava.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
+        Scene scene = new Scene(fxmlLoader.load(), 1000, 800);
         stage.setScene(scene);
         stage.show();
         stage.setTitle("N-REINES");
-        stage.setFullScreen(true);
+       // stage.setFullScreen(true);
 
         Button Go = (Button) scene.lookup("#go");
         MenuButton choix = (MenuButton)scene.lookup("#choose");
@@ -79,7 +79,7 @@ public class  Interface  extends Application {
                 Main.Node.n = a;
                 int[] bestSol=new int[0];
 
-            if(a<8){
+            if(a<6){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("trop petit n");
                 alert.setHeaderText(null);
@@ -91,7 +91,7 @@ public class  Interface  extends Application {
                     }
                 });
             }else{
-
+System.out.println(choix.getText()+"|");
                 switch (choix.getText()) {
                     case "DFS":
                         DFS algoDfs = new DFS();
@@ -109,15 +109,15 @@ public class  Interface  extends Application {
                         dev=algoBfs.nbrNdev;
                         gen=algoBfs.nbrNgen;
                         break;
-                    case "h1":
+                    case "heuristique 1":
                         Astar A = new Astar();
                         start = System.currentTimeMillis();
                         bestSol=A.Recherche(new Main.Node(new int[0],0),1).getEtat();
                         end = System.currentTimeMillis();
-                        dev=0;
-                        gen=0;
+                        dev=A.nbrNdev;
+                        gen=A.nbrNgen;
                         break;
-                    case "h2":
+                    case "heuristique 2":
                         Astar B = new Astar();
                         start = System.currentTimeMillis();
                         bestSol=B.Recherche(new Main.Node(new int[0],0),2).getEtat();
@@ -129,14 +129,10 @@ public class  Interface  extends Application {
                         bestSol = new int[a];
                 }
 
-                ChessBoard chessBoard = new ChessBoard(a, bestSol);
                 INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"Nombre de noeuds générés: "+gen+"\nNombre de noeuds developpés"+dev);
                 if (content instanceof AnchorPane) {
                     ap = (AnchorPane) content;
-                    AnchorPane.setTopAnchor(chessBoard, 0.0);
-                    AnchorPane.setBottomAnchor(chessBoard, 0.0);
-                    AnchorPane.setRightAnchor(chessBoard, 0.0);
-                    AnchorPane.setLeftAnchor(chessBoard, 0.0);
+                    ChessBoard chessBoard = new ChessBoard(a, bestSol,ap.getWidth(), ap.getHeight());
                     ap.getChildren().clear();
                     ap.getChildren().add(chessBoard);
                 }
