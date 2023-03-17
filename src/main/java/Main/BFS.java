@@ -10,7 +10,7 @@ public class BFS {
     int sizeInitial;
 
     public BFS() {}
-    public int [] Recherche( Node G){
+    public int[] Recherche(Node G){
 
         Node d=G , n;
 

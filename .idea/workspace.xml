@@ -10,7 +10,8 @@
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_10_2023_11_36_AM_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_10_2023_11_36_AM_[Changes]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_10_2023_11_36_AM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_10_2023_11_36_AM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -33,6 +34,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Noeud.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Patitionnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Patitionnement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/queenblanch.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/queenblanch.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/queenblck_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/queenblck_1.txt" afterDir="false" />
@@ -159,7 +161,13 @@
       <workItem from="1678728342959" duration="12366000" />
       <workItem from="1678877241090" duration="290000" />
       <workItem from="1678884436419" duration="11916000" />
-      <workItem from="1678984193639" duration="8431000" />
+      <workItem from="1678984193639" duration="8432000" />
+      <workItem from="1679007498432" duration="707000" />
+      <workItem from="1679047566133" duration="1138000" />
+      <workItem from="1679049462541" duration="2000" />
+      <workItem from="1679049607436" duration="11000" />
+      <workItem from="1679050202887" duration="4891000" />
+      <workItem from="1679055434791" duration="10320000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1677489730062</created>

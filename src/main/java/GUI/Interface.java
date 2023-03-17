@@ -28,10 +28,13 @@ public class  Interface  extends Application {
     public void start(Stage stage) throws IOException {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/interfacejava.fxml"));
+
+
         Scene scene = new Scene(fxmlLoader.load(), 1000, 800);
         stage.setScene(scene);
         stage.show();
         stage.setTitle("N-REINES");
+
        // stage.setFullScreen(true);
 
         Button Go = (Button) scene.lookup("#go");
@@ -81,7 +84,7 @@ public class  Interface  extends Application {
 
             if(a<6){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("trop petit n");
+                alert.setTitle("valeur trop petite de n");
                 alert.setHeaderText(null);
                 alert.setContentText("entrez une taille d'echiquier plus grande");
                 alert.getButtonTypes().setAll(ButtonType.OK);
@@ -91,6 +94,21 @@ public class  Interface  extends Application {
                     }
                 });
             }else{
+                if(a>13){
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("Espace insuffisant");
+                    alert.setHeaderText(null);
+                    alert.setContentText("entrez une taille d'echiquier plus petite");
+                    alert.getButtonTypes().setAll(ButtonType.OK);
+                    alert.showAndWait().ifPresent(response -> {
+                        if (response == ButtonType.OK) {
+                            ap.getChildren().clear();
+                        }
+                    });
+                }else{
+
+
+
 System.out.println(choix.getText()+"|");
                 switch (choix.getText()) {
                     case "DFS":
@@ -122,8 +140,8 @@ System.out.println(choix.getText()+"|");
                         start = System.currentTimeMillis();
                         bestSol=B.Recherche(new Main.Node(new int[0],0),2).getEtat();
                         end = System.currentTimeMillis();
-                        dev=0;
-                        gen=0;
+                        dev=B.nbrNdev;
+                        gen=B.nbrNgen;
                         break;
                     default:
                         bestSol = new int[a];
@@ -136,7 +154,7 @@ System.out.println(choix.getText()+"|");
                     ap.getChildren().clear();
                     ap.getChildren().add(chessBoard);
                 }
-            }
+            }}
         });
 
     }

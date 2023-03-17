@@ -2,8 +2,8 @@ package Main;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.LinkedList;
-import java.util.Queue;
+
+import static java.lang.Math.min;
 
 public class Astar {
 
@@ -13,24 +13,22 @@ public class Astar {
 
 
     public int h(Node n,int hi){
-
-            int m=n.getEtat().length-1;
+        int m=n.getEtat().length-1;
+        if(m==-1 ) return 1000;
+        if(m==0) return  -Math.abs( n.getEtat()[m] -Node.n/2);
+        for (int j = m -1; j >= 0; j--) {
+            if ( m-j == Math.abs(n.getEtat()[m] - n.getEtat()[j])) return 100;
+        }
+        int p=n.getEtat()[n.getEtat().length-1];
             if(hi==1){
-                if(m==-1) return 0;
-                    for (int j = m -1; j >= 0; j--) {
 
-                        if ( m-j == Math.abs(n.getEtat()[m] - n.getEtat()[j])) return Node.n-m;
-                    }
+                return -Math.abs(m*(p) - (Node.n*Node.n)/4);
 
-            int j= n.getEtat()[n.getEtat().length-1];
-             if((j>=m && j<Node.n-m-1) || (m>=j && m<Node.n-1-j)){return -Math.abs(m*j - (Node.n*Node.n)/4);}
+            }else{
 
-            }else {
-                if(hi==2){
+                return Math.min(p,m)+(Node.n - p - 1)+ (Node.n - m - 1) + Math.min((Node.n - p - 1), (Node.n - m - 1))+ 1  ;
 
-                }
             }
-            return 0;
         }
         public int g(Node n ){
 

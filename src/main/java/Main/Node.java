@@ -41,8 +41,8 @@ public class Node {
         public ArrayList<Node> getNoeudEnfants() {
            ArrayList<Node> childs  = new ArrayList<Node>();
             for(int i=0;i<n;i++) {
-                if (!contains(this.etat,i)){
-                    int[] a = copyWithIncreasedSize(etat, i);
+                if (!contains(etat,i)){
+                    int [] a = copyWithIncreasedSize(etat, i);
                 childs.add(new Node(a, this.profondeur + 1));
                  }
             }
@@ -69,7 +69,7 @@ public class Node {
         public Node(int[] etat) {
             this.etat = etat;
         }
-        public Node(int[] etat,int profondeur) {
+        public Node(int [] etat,int profondeur) {
             this.etat = etat;
             this.profondeur=profondeur;
         }
