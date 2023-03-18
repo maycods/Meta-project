@@ -43,6 +43,10 @@ public class  Interface  extends Application {
         MenuButton choix = (MenuButton)scene.lookup("#choose");
         TextField textField = (TextField)scene.lookup("#taille");
         Text  INFOS = (Text)scene.lookup("#data");
+        Text  exe = (Text)scene.lookup("#exe");
+        Text  ngen  = (Text)scene.lookup("#ngen");
+        Text  ndev = (Text)scene.lookup("#ndev");
+
 
 
         MenuItem bfs = choix.getItems().get(0);
@@ -121,7 +125,12 @@ public class  Interface  extends Application {
                     default:
                         bestSol = new int[a];
                 }
-                INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"NOMBRE DE NOEUDS GENERE "+gen+"\nNOMBRE DE NOEUDS DEVELOPE "+dev);
+
+//                INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"NOMBRE DE NOEUDS GENERE "+gen+"\nNOMBRE DE NOEUDS DEVELOPE "+dev);
+                exe.setText((double)(end-start) + " ms");
+                ngen.setText(gen+"");
+                ndev.setText(dev+"");
+
 
                 if (content instanceof AnchorPane) {
                ap = (AnchorPane) content;

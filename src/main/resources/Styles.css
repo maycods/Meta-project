@@ -36,4 +36,9 @@
 }
 #content{
     -fx-background-color :  #342c2c;
+
+}
+.text{
+    -fx-font-size: 15px;
+
 }
