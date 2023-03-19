@@ -136,7 +136,7 @@ System.out.println(choix.getText()+"|");
                         dev=algoBfs.nbrNdev;
                         gen=algoBfs.nbrNgen;
                         break;
-                    case "heuristique 1":
+                    case "heuristique 1 ":
                         Astar A = new Astar();
                         start = System.currentTimeMillis();
                         bestSol=A.Recherche(new Main.Node(new int[0],0),1).getEtat();
@@ -155,8 +155,11 @@ System.out.println(choix.getText()+"|");
                     default:
                         bestSol = new int[a];
                 }
+                    exe.setText((double)(end-start) + " ms");
+                    ngen.setText(gen+"");
+                    ndev.setText(dev+"");
 
-                INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"Nombre de noeuds générés: "+gen+"\nNombre de noeuds developpés"+dev);
+                //INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"Nombre de noeuds générés: "+gen+"\nNombre de noeuds developpés"+dev);
                 if (content instanceof AnchorPane) {
                     ap = (AnchorPane) content;
                     ChessBoard chessBoard = new ChessBoard(a, bestSol,ap.getWidth(), ap.getHeight());

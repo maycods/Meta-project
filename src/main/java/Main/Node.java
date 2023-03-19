@@ -13,10 +13,10 @@ public class Node {
 //            System.out.println(etat);
             int i=0;
 
-            while(i<n){
-                 if(!contains(etat, i)) return false;
-                i++;
-            }
+//            while(i<n){
+//                 if(!contains(etat, i)) return false;
+//                i++;
+//            }
             return true;
         }
         //algorithm evaluation..
