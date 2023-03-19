@@ -11,6 +11,7 @@ import javafx.scene.shape.Rectangle;
 
 
 
+
 class ChessBoard extends GridPane {
 
     public ChessBoard(int size, int[] sol) {
