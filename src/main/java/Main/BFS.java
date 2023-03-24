@@ -8,19 +8,17 @@ public class BFS {
   public  int nbrNdev=0,nbrNgen =1;
   int sizeInitial;
 
-  public BFS() {}public int[] Recherche(Node G){
-
-        Node d=G , n;
-
-        ouvert.add(d);
-
+  public BFS() {}
+    public int[] Recherche(Node G){
+        Node  n;
+        ouvert.add(G);
         while (!ouvert.isEmpty()){
             nbrNdev++;
             n=ouvert.poll();
 
             if(n.verification() && n.evaluation()){ return n.getEtat();}
 
-            if (n.successeurs()) {
+            if (!n.verification()) {
                 sizeInitial =ouvert.size();
                 ouvert.addAll(n.getNoeudEnfants());
                 nbrNgen=nbrNgen+(ouvert.size() - sizeInitial);

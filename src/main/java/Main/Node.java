@@ -1,6 +1,4 @@
 package Main;
-
-
 import java.util.ArrayList;
 
 public class Node {
@@ -8,33 +6,26 @@ public class Node {
         private int[] etat ;
         private int f,profondeur;
 
-        public Boolean verification(){
+        public boolean verification(){
             if (etat.length!= n) return false;
             return true;
         }
-
         public boolean evaluation(){
             for (int i = 0; i <etat.length; i++) {
                 for (int j = i + 1; j < etat.length; j++) {
                     if (j - i == Math.abs(etat[i] - etat[j])) return false;
                 }
             }
-             return true;
-        }
-        public Boolean successeurs(){
-
-            if(etat.length == n) return false;
-
             return true;
-
         }
         public ArrayList<Node> getNoeudEnfants() {
-           ArrayList<Node> childs  = new ArrayList<Node>();
+
+            ArrayList<Node> childs  = new ArrayList<Node>();
             for(int i=0;i<n;i++) {
                 if (!contains(etat,i)){
                     int [] a = copyWithIncreasedSize(etat, i);
-                childs.add(new Node(a, this.profondeur + 1));
-                 }
+                    childs.add(new Node(a, this.profondeur + 1));
+                }
             }
             return childs;
         }

@@ -31,13 +31,8 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Noeud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Noeud.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TP/maya/Patitionnement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/maya/Patitionnement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/New Text Document.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/interfacejava.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/queenblanch.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/queenblanch.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/queenblck_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/queenblck_1.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +165,7 @@
       <workItem from="1679055434791" duration="10320000" />
       <workItem from="1679246572237" duration="12000" />
       <workItem from="1679396427857" duration="231000" />
-      <workItem from="1679660183913" duration="7583000" />
+      <workItem from="1679660183913" duration="14969000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1677489730062</created>

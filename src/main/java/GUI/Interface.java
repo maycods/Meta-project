@@ -15,7 +15,6 @@ import javafx.scene.Scene;
         import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 
 public class  Interface  extends Application {
@@ -32,9 +31,6 @@ public class  Interface  extends Application {
 
         Scene scene = new Scene(fxmlLoader.load(), 1000, 800);
         stage.setScene(scene);
-
-        stage.initStyle(StageStyle.DECORATED);
-
         stage.show();
         stage.setTitle("N-REINES");
         Button Go = (Button) scene.lookup("#go");
