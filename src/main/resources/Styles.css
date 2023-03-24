@@ -1,6 +1,9 @@
 .view-container {
     -fx-background-color :  #342c2c;
 }
+.title-bar{
+    -fx-background-color :  #749454;
+}
 .Button {
     -fx-line-spacing: 1.2;
     -fx-background-color : #749454;

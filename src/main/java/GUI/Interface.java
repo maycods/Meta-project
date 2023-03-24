@@ -1,7 +1,6 @@
 package GUI;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 import static java.lang.Integer.parseInt;
 
@@ -16,7 +15,7 @@ import javafx.scene.Scene;
         import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
+import javafx.stage.StageStyle;
 
 
 public class  Interface  extends Application {
@@ -33,25 +32,21 @@ public class  Interface  extends Application {
 
         Scene scene = new Scene(fxmlLoader.load(), 1000, 800);
         stage.setScene(scene);
+
+        stage.initStyle(StageStyle.DECORATED);
+
         stage.show();
         stage.setTitle("N-REINES");
-        // Set the width of the stage to the screen width
-//        Screen screen = Screen.getPrimary();
-//        Rectangle2D bounds = screen.getVisualBounds();
-//        stage.setWidth(bounds.getWidth());
-//        stage.setHeight(bounds.getHeight());
-//        stage.setFullScreen(true);
-
         Button Go = (Button) scene.lookup("#go");
         MenuButton choix = (MenuButton)scene.lookup("#choose");
         TextField textField = (TextField)scene.lookup("#taille");
-        Text  INFOS = (Text)scene.lookup("#data");
+
         Text  exe = (Text)scene.lookup("#exe");
         Text  ngen  = (Text)scene.lookup("#ngen");
         Text  ndev = (Text)scene.lookup("#ndev");
 
 
-
+        choix.setText("Aucun");
         MenuItem bfs = choix.getItems().get(0);
         MenuItem dfs=choix.getItems().get(1);
         MenuItem h1=choix.getItems().get(2);
@@ -72,9 +67,7 @@ public class  Interface  extends Application {
 
 
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
-//            if (newValue.length() > 10){
-//                textField.setText("");
-//            }
+
             if (!newValue.matches("\\d*")) {
                 textField.setText(newValue.replaceAll("[^\\d]", ""));
             }
@@ -89,7 +82,7 @@ public class  Interface  extends Application {
 
                 int a = parseInt(newText);
                 Main.Node.n = a;
-                int[] bestSol=new int[0];
+                int[] bestSol;
 
             if(a<6){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -102,8 +95,9 @@ public class  Interface  extends Application {
                         ap.getChildren().clear();
                     }
                 });
-            }else{
-                if(a>13){
+            }
+            else{
+                if(a>20){
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Espace insuffisant");
                     alert.setHeaderText(null);
@@ -114,59 +108,56 @@ public class  Interface  extends Application {
                             ap.getChildren().clear();
                         }
                     });
-                }else{
-
-
-
-System.out.println(choix.getText()+"|");
-                switch (choix.getText()) {
-                    case "DFS":
-                        DFS algoDfs = new DFS();
-                         start = System.currentTimeMillis();
-                       bestSol=  algoDfs.Recherche(new Main.Node(new int[0]));
-                         end = System.currentTimeMillis();
-                         dev=algoDfs.nbrNdev;
-                         gen=algoDfs.nbrNgen;
-                        break;
-                    case "BFS":
-                        BFS algoBfs = new BFS();
-                         start = System.currentTimeMillis();
-                        bestSol=algoBfs.Recherche(new Main.Node(new int[0]));
-                         end = System.currentTimeMillis();
-                        dev=algoBfs.nbrNdev;
-                        gen=algoBfs.nbrNgen;
-                        break;
-                    case "heuristique 1 ":
-                        Astar A = new Astar();
-                        start = System.currentTimeMillis();
-                        bestSol=A.Recherche(new Main.Node(new int[0],0),1).getEtat();
-                        end = System.currentTimeMillis();
-                        dev=A.nbrNdev;
-                        gen=A.nbrNgen;
-                        break;
-                    case "heuristique 2":
-                        Astar B = new Astar();
-                        start = System.currentTimeMillis();
-                        bestSol=B.Recherche(new Main.Node(new int[0],0),2).getEtat();
-                        end = System.currentTimeMillis();
-                        dev=B.nbrNdev;
-                        gen=B.nbrNgen;
-                        break;
-                    default:
-                        bestSol = new int[a];
                 }
+                else{
+                    switch (choix.getText()) {
+                        case "DFS":
+                            DFS algoDfs = new DFS();
+                             start = System.currentTimeMillis();
+                           bestSol=  algoDfs.Recherche(new Main.Node(new int[0]));
+                             end = System.currentTimeMillis();
+                             dev=algoDfs.nbrNdev;
+                             gen=algoDfs.nbrNgen;
+                            break;
+                        case "BFS":
+                            BFS algoBfs = new BFS();
+                             start = System.currentTimeMillis();
+                            bestSol=algoBfs.Recherche(new Main.Node(new int[0]));
+                             end = System.currentTimeMillis();
+                            dev=algoBfs.nbrNdev;
+                            gen=algoBfs.nbrNgen;
+                            break;
+                        case "heuristique 1 ":
+                            Astar A = new Astar();
+                            start = System.currentTimeMillis();
+                            bestSol=A.Recherche(new Main.Node(new int[0],0),1);
+                            end = System.currentTimeMillis();
+                            dev=A.nbrNdev;
+                            gen=A.nbrNgen;
+                            break;
+                        case "heuristique 2":
+                            Astar B = new Astar();
+                            start = System.currentTimeMillis();
+                            bestSol=B.Recherche(new Main.Node(new int[0],0),2);
+                            end = System.currentTimeMillis();
+                            dev=B.nbrNdev;
+                            gen=B.nbrNgen;
+                            break;
+                        default:
+                            bestSol = new int[a];
+                    }
                     exe.setText((double)(end-start) + " ms");
                     ngen.setText(gen+"");
                     ndev.setText(dev+"");
 
-                //INFOS.setText("Infos: \n temps d execution "+(double)(end-start)+"ms\n"+"Nombre de noeuds générés: "+gen+"\nNombre de noeuds developpés"+dev);
-                if (content instanceof AnchorPane) {
-                    ap = (AnchorPane) content;
-                    ChessBoard chessBoard = new ChessBoard(a, bestSol,ap.getWidth(), ap.getHeight());
-                    ap.getChildren().clear();
-                    ap.getChildren().add(chessBoard);
+                    if (content instanceof AnchorPane) {
+                        ap = (AnchorPane) content;
+                        ChessBoard chessBoard = new ChessBoard(a, bestSol,ap.getWidth(), ap.getHeight());
+                        ap.getChildren().clear();
+                        ap.getChildren().add(chessBoard);
+                    }
                 }
-            }}
+            }
         });
 
     }

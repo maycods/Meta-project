@@ -1,7 +1,7 @@
 package Main;
 
-import java.lang.reflect.Array;
-import java.util.*;
+
+import java.util.ArrayList;
 
 public class Node {
         public static int n ;
@@ -10,43 +10,17 @@ public class Node {
 
         public Boolean verification(){
             if (etat.length!= n) return false;
-//            System.out.println(etat);
-            int i=0;
-
-//            while(i<n){
-//                 if(!contains(etat, i)) return false;
-//                i++;
-//            }
             return true;
-        }
-        //algorithm evaluation..
-        //check the column and the diagonal
-
-        public Boolean evaluation1(){
-        for (int i = 0; i< n-1; i++){
-            for (int j = i+1; j< etat.length; j++) {
-                //check the column
-                if (etat[i] == etat[j]){
-                    return false;}
-
-                //check all the diagonals
-                if (j-i == Math.abs(etat[i] - etat[j])) return false;
-            }
-        }
-        return true;
         }
 
         public boolean evaluation(){
             for (int i = 0; i <etat.length; i++) {
                 for (int j = i + 1; j < etat.length; j++) {
-
                     if (j - i == Math.abs(etat[i] - etat[j])) return false;
                 }
             }
              return true;
         }
-
-
         public Boolean successeurs(){
 
             if(etat.length == n) return false;
@@ -54,7 +28,6 @@ public class Node {
             return true;
 
         }
-
         public ArrayList<Node> getNoeudEnfants() {
            ArrayList<Node> childs  = new ArrayList<Node>();
             for(int i=0;i<n;i++) {
@@ -65,7 +38,6 @@ public class Node {
             }
             return childs;
         }
-
         private boolean contains(int[] list, int val){
             for (int i = 0; i < list.length; i++) {
                 if (list[i] == val) {
@@ -74,12 +46,12 @@ public class Node {
             }
             return false;
         }
-        public static int[] copyWithIncreasedSize(int[] original, int newElement) {
-            int[] copy = new int[original.length + 1]; // create new array with one more element
+        public static int[] copyWithIncreasedSize(int[] original, int newElement){
+            int[] copy = new int[original.length + 1];
             for (int i = 0; i < original.length; i++) {
-                copy[i] = original[i]; // copy elements from original array
+                copy[i] = original[i];
             }
-            copy[original.length] = newElement; // add new element to the end
+            copy[original.length] = newElement;
             return copy;
         }
 
