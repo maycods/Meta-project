@@ -1,5 +1,7 @@
 package Main;
 
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+
 import java.util.Stack;
 
 public class DFS {
@@ -7,7 +9,7 @@ public class DFS {
     public  int nbrNdev=0,nbrNgen =1;
     int sizeInitial;
     public DFS() {}
-    public int [] Recherche( Node G){
+    public IntArrayList Recherche(Node G){
 
         Node  n;
         pile.add(G);

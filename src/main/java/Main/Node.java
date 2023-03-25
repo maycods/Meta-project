@@ -1,19 +1,19 @@
 package Main;
 import java.util.ArrayList;
-
+import it.unimi.dsi.fastutil.ints.IntArrayList;
 public class Node {
         public static int n ;
-        private int[] etat ;
-        private int f,profondeur;
+       private IntArrayList etat ;
+        private int profondeur, f;
 
         public boolean verification(){
-            if (etat.length!= n) return false;
+            if (etat.size()!= n) return false;
             return true;
         }
         public boolean evaluation(){
-            for (int i = 0; i <etat.length; i++) {
-                for (int j = i + 1; j < etat.length; j++) {
-                    if (j - i == Math.abs(etat[i] - etat[j])) return false;
+            for (int i = 0; i <etat.size(); i++) {
+                for (int j = i + 1; j < etat.size(); j++) {
+                    if (j - i == Math.abs(etat.getInt(i) - etat.getInt(j))) return false;
                 }
             }
             return true;
@@ -22,34 +22,22 @@ public class Node {
 
             ArrayList<Node> childs  = new ArrayList<Node>();
             for(int i=0;i<n;i++) {
-                if (!contains(etat,i)){
-                    int [] a = copyWithIncreasedSize(etat, i);
-                    childs.add(new Node(a, this.profondeur + 1));
+                if (!etat.contains(i)){
+                    childs.add(new Node(copyWithIncreasedSize(i), this.profondeur + 1));
                 }
             }
             return childs;
         }
-        private boolean contains(int[] list, int val){
-            for (int i = 0; i < list.length; i++) {
-                if (list[i] == val) {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public static int[] copyWithIncreasedSize(int[] original, int newElement){
-            int[] copy = new int[original.length + 1];
-            for (int i = 0; i < original.length; i++) {
-                copy[i] = original[i];
-            }
-            copy[original.length] = newElement;
+        public IntArrayList copyWithIncreasedSize(int newElement){
+            IntArrayList copy = etat.clone();
+                copy.add(newElement);
             return copy;
         }
 
-        public Node(int[] etat) {
+        public Node(IntArrayList etat) {
             this.etat = etat;
         }
-        public Node(int [] etat,int profondeur) {
+        public Node(IntArrayList etat,int profondeur) {
             this.etat = etat;
             this.profondeur=profondeur;
         }
@@ -59,7 +47,7 @@ public class Node {
         public void setF(int f) {
             this.f = f;
         }
-        public int[] getEtat() {
+        public IntArrayList getEtat() {
             return etat;
         }
         public int getProfondeur() {

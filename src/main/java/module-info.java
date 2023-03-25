@@ -8,6 +8,7 @@ module Main {
 //    requires validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires it.unimi.dsi.fastutil;
 //    requires eu.hansolo.tilesfx;
 
 

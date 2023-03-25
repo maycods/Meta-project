@@ -1,4 +1,6 @@
 package Main;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -15,25 +17,20 @@ public class Astar {
     });
 
     public int h(Node n,int hi){
-        int m=n.getEtat().length-1;
-
-        if(m==-1 ) return 100;
-        if(m==0){return  -Math.abs( n.getEtat()[m] -Node.n/2);}
-
-        for (int j = m -1; j >= 0; j--) {
-            if ( m-j == Math.abs(n.getEtat()[m] - n.getEtat()[j])) return 100;
-        }
-
-        int p=n.getEtat()[n.getEtat().length-1];
-        
+            int m=n.getEtat().size()-1;
+            if(m==-1) return Node.n;
+            if(m>0) {
+                for (int j = m - 1; j >= 0; j--) {
+                    if (m - j == Math.abs(n.getEtat().getInt(m) - n.getEtat().getInt(j))) return 1000;
+                }
+            }
             if(hi==1){
 
-                return -Math.abs( (m*p) - ((Node.n*Node.n)/4) );
-
-            }else{
-
+                int p=n.getEtat().getInt(m);
                 return Math.min(p,m)+(Node.n - p )+ (Node.n - m ) + Math.min((Node.n - p - 1), (Node.n - m - 1)) ;
 
+            }else{
+                return (Node.n-m);
             }
         }
 
@@ -41,7 +38,7 @@ public class Astar {
 
             return n.getProfondeur();
         }
-        public int[] Recherche(Node G,int hi){
+        public IntArrayList Recherche(Node G, int hi){
 
             Node n;
             G.setF(g(G)+h(G,hi));

@@ -7,6 +7,7 @@ import static java.lang.Integer.parseInt;
 import Main.Astar;
 import Main.BFS;
 import Main.DFS;
+import it.unimi.dsi.fastutil.ints.IntArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -78,7 +79,7 @@ public class  Interface  extends Application {
 
                 int a = parseInt(newText);
                 Main.Node.n = a;
-                int[] bestSol;
+               IntArrayList bestSol;
 
             if(a<6){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -93,7 +94,7 @@ public class  Interface  extends Application {
                 });
             }
             else{
-                if(a>20){
+                if(a>35){
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Espace insuffisant");
                     alert.setHeaderText(null);
@@ -110,7 +111,7 @@ public class  Interface  extends Application {
                         case "DFS":
                             DFS algoDfs = new DFS();
                              start = System.currentTimeMillis();
-                           bestSol=  algoDfs.Recherche(new Main.Node(new int[0]));
+                           bestSol=  algoDfs.Recherche(new Main.Node(new IntArrayList(0)));
                              end = System.currentTimeMillis();
                              dev=algoDfs.nbrNdev;
                              gen=algoDfs.nbrNgen;
@@ -118,7 +119,7 @@ public class  Interface  extends Application {
                         case "BFS":
                             BFS algoBfs = new BFS();
                              start = System.currentTimeMillis();
-                            bestSol=algoBfs.Recherche(new Main.Node(new int[0]));
+                            bestSol=algoBfs.Recherche(new Main.Node(new IntArrayList(0)));
                              end = System.currentTimeMillis();
                             dev=algoBfs.nbrNdev;
                             gen=algoBfs.nbrNgen;
@@ -126,7 +127,7 @@ public class  Interface  extends Application {
                         case "heuristique 1 ":
                             Astar A = new Astar();
                             start = System.currentTimeMillis();
-                            bestSol=A.Recherche(new Main.Node(new int[0],0),1);
+                            bestSol=A.Recherche(new Main.Node(new IntArrayList(0),0),1);
                             end = System.currentTimeMillis();
                             dev=A.nbrNdev;
                             gen=A.nbrNgen;
@@ -134,13 +135,13 @@ public class  Interface  extends Application {
                         case "heuristique 2":
                             Astar B = new Astar();
                             start = System.currentTimeMillis();
-                            bestSol=B.Recherche(new Main.Node(new int[0],0),2);
+                            bestSol=B.Recherche(new Main.Node(new IntArrayList(0),0),2);
                             end = System.currentTimeMillis();
                             dev=B.nbrNdev;
                             gen=B.nbrNgen;
                             break;
                         default:
-                            bestSol = new int[a];
+                            bestSol = new IntArrayList(a);
                     }
                     exe.setText((double)(end-start) + " ms");
                     ngen.setText(gen+"");
