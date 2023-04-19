@@ -1,23 +1,17 @@
 package Main;
 
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-
-
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CloneNotSupportedException {
 
         DFS dfs = new DFS();
         BFS bfs = new BFS();
         Astar a = new Astar();
         Astar a2 = new Astar();
 
-        Node.n = 4;
-        PSO pso = new PSO(4, 10);
-        pso.population.forEach(node -> {
-            System.out.println(node.getEtat()+" "+node.fitness());
-        });
-        System.out.println(pso.getVelocity());
+        Node.n = 10;
+        PSO pso = new PSO(10);
+         pso.search(10, 35, 700000, 0.6, 2, 2);
 //        IntArrayList best;
 //        long d,f,s1=0,s2=0,sF=0,sB=0;
 //
