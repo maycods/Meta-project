@@ -21,6 +21,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/DFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/PSO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/PSO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP1/EXO1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP1/EXO1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/DFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/TP/TP2/EXO2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TP/TP2/EXO2.java" afterDir="false" />
@@ -43,8 +44,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,7 +103,7 @@
       <recent name="C:\Users\HP\IdeaProjects\Meta\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Interface">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Interface" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="GUI.Interface" />
       <module name="Meta-projet" />
@@ -131,8 +132,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Interface" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Interface" />
         <item itemvalue="Application.Interface" />
       </list>
     </recent_temporary>
@@ -185,6 +186,8 @@
       <workItem from="1679684295848" duration="2038000" />
       <workItem from="1679742788733" duration="15782000" />
       <workItem from="1679765927892" duration="4658000" />
+      <workItem from="1681921561091" duration="811000" />
+      <workItem from="1681922424737" duration="10414000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1677489730062</created>

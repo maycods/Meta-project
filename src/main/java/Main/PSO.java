@@ -1,5 +1,7 @@
 package Main;
 
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +14,8 @@ public class PSO {
 
     public void search(int n, int nbPop, int nbIteration, double w, int c1, int c2) {
         ArrayList<Node> population;
-        ArrayList<ArrayList<Integer>> pBest;
-        ArrayList<Integer> gBest = null;
+        ArrayList<IntArrayList> pBest;
+        IntArrayList gBest = null;
         int gBestFitness = Integer.MAX_VALUE;
         ArrayList<Double> velocity;
         // TODO implement the PSO algorithm
@@ -22,8 +24,8 @@ public class PSO {
         pBest = new ArrayList<>();
         ArrayList<Integer> pBestFitness = new ArrayList<>();
         for (int i = 0; i < nbPop; i++) {
-            var rand = Node.generateRandomState(n);
-            var copie = (ArrayList<Integer>)rand.clone();
+            var  rand = Node.generateRandomState(n);
+            var copie = (IntArrayList)rand.clone();
 
             population.add(new Node(copie));
             velocity.add(Math.random());
@@ -67,13 +69,13 @@ public class PSO {
 
         System.out.println("gBest = " + gBest);
         Node x = new Node(gBest);
-        System.out.println("gBestFitness = " + x.evaluation());
+        System.out.println("gBestFitness = " + x.evaluation2());
         System.out.println("gBestFitness = " + gBestFitness);
     }
 
-    private ArrayList<Integer> updateParticle(Node particle, double v) {
+    private IntArrayList updateParticle(Node particle, double v) {
         // TODO update the particle position
-        ArrayList<Integer> sol = particle.getEtat();
+        IntArrayList sol = particle.getEtat();
 
         for (int i = 0; i < n; i++) {
             var val = sol.get(i);
@@ -84,7 +86,7 @@ public class PSO {
         return sol;
     }
 
-    private Integer distance(ArrayList<Integer> d, Node node2) {
+    private Integer distance(IntArrayList d, Node node2) {
         //hamming distance
         int distance = 0;
         for (int i = 0; i < n; i++) {

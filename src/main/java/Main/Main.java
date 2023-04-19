@@ -1,17 +1,16 @@
 package Main;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) throws CloneNotSupportedException {
 
-        DFS dfs = new DFS();
-        BFS bfs = new BFS();
-        Astar a = new Astar();
-        Astar a2 = new Astar();
 
-        Node.n = 10;
+
+       /* Node.n = 10;
         PSO pso = new PSO(10);
-         pso.search(10, 35, 700000, 0.6, 2, 2);
+         pso.search(10, 35, 700000, 0.6, 2, 2);*/
 //        IntArrayList best;
 //        long d,f,s1=0,s2=0,sF=0,sB=0;
 //
@@ -47,5 +46,51 @@ public class Main {
 //            System.out.println((long)(sF/20.0)+" "+dfs.nbrNdev+" "+ dfs.nbrNgen);
 //            System.out.println((long)(sB/20.0)+" "+bfs.nbrNdev+" "+ bfs.nbrNgen);
 //        }
+
+        int problemsize=10000;
+        // Noeud.T = generationInstance(problemsize);
+        GA M =new GA();
+         /*for( taillepop=60;taillepop<=100;taillepop+=10){
+            for( nbriter=20;nbriter<=50;nbriter+=10){//iterations
+                for( methS=1;methS<4;methS++){
+                    for( methR=1;methR<4;methR++){
+                        for( nbrpointC=1;nbrpointC<4;nbrpointC++){
+                            for(tauxC=0.6;tauxC<0.9;tauxC=tauxC+0.1){
+                                for( tauxM=0.1;tauxM<0.3;tauxM+=0.1){
+                                    moyevaluation=0.0;
+                                    System.out.println(taillepop);
+                                    for( int i=0;i<10;i++){
+                                        a = M.Lancer(problemsize, taillepop,nbriter,tauxC,tauxM,methS,methR,nbrpointC);
+                                        moyevaluation +=a.evaluation();
+                                    }
+
+                                    if((moyevaluation / 10.0)< bestEvaluation){
+                                        bestEvaluation=(moyevaluation / 10.0);
+                                        Tpop= taillepop;
+                                        Iter=nbriter;
+                                        TauxC=tauxC;
+                                        TauxM=tauxM;
+                                        MethS=methS;
+                                        MethR=methR;
+                                        Points=nbrpointC;
+                                        System.out.println(Tpop+" "+Iter+" "+MethS+" "+MethR+" "+Points+" "+TauxC+" "+TauxM);
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+        }*/
+        int  taillepop=100,nbriter=200,methS=3,methR=1,nbrpointC=3;
+        double tauxM=0.1;
+
+        Node p =M.Lancer(problemsize, taillepop, nbriter, tauxM, methS, methR, nbrpointC);
+
+        System.out.println(p.evaluation2());
+        System.out.println(p.getEtat().toString());
+
+
     }
 }
