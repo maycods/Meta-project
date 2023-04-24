@@ -3,7 +3,6 @@ package Main;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PSO {
     public int n;
@@ -65,10 +64,11 @@ public class PSO {
             }
             i++;
         }
+
         System.out.println("iteration " + i);
 
         System.out.println("gBest = " + gBest);
-        Node x = new Node(gBest);
+        Individu x = new Individu(gBest);
         System.out.println("gBestFitness = " + x.evaluation2());
         System.out.println("gBestFitness = " + gBestFitness);
     }
