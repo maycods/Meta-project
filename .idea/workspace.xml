@@ -20,6 +20,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/BFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/DFS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/GA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/GA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/Individu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Individu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main/PSO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/PSO.java" afterDir="false" />
@@ -86,6 +87,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -195,6 +198,7 @@
       <workItem from="1682279562193" duration="2217000" />
       <workItem from="1682320103494" duration="110000" />
       <workItem from="1682324067560" duration="5693000" />
+      <workItem from="1682415678695" duration="8745000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <created>1677489730062</created>

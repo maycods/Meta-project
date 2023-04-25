@@ -11,7 +11,7 @@ public class PSO {
         this.n = n;
     }
 
-    public void search(int n, int nbPop, int nbIteration, double w, int c1, int c2) {
+    public Individu search(int n, int nbPop, int nbIteration, double w, int c1, int c2) {
         ArrayList<Node> population;
         ArrayList<IntArrayList> pBest;
         IntArrayList gBest = null;
@@ -71,6 +71,7 @@ public class PSO {
         Individu x = new Individu(gBest);
         System.out.println("gBestFitness = " + x.evaluation2());
         System.out.println("gBestFitness = " + gBestFitness);
+        return x;
     }
 
     private IntArrayList updateParticle(Node particle, double v) {

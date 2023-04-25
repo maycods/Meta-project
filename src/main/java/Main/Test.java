@@ -1,13 +1,9 @@
 package Main;
 
-import java.util.ArrayList;
-import java.lang.Math;
-public class Main {
-
-    public static void main(String[] args) throws CloneNotSupportedException {
+public class Test {
 
 
-
+        public static void main(String[] args) throws CloneNotSupportedException {
        /* Node.n = 10;
         PSO pso = new PSO(10);
          pso.search(10, 35, 700000, 0.6, 2, 2);*/
@@ -47,16 +43,16 @@ public class Main {
 //            System.out.println((long)(sB/20.0)+" "+bfs.nbrNdev+" "+ bfs.nbrNgen);
 //        }
 
-        int problemsize=1000;
-        int  taillepop=90,nbriter=20,methS=3,methR=1,nbrpointC=3;
-        double tauxM=0.1;
-        double moyevaluation;
-        Node a;
-        double bestEvaluation=1000000.0;
-        int Tpop=0,Iter=0,MethS=0,MethR=0,Points=0;
-        double TauxC=0, TauxM=0;
-        // Noeud.T = generationInstance(problemsize);
-        GA M =new GA();/*
+            int problemsize=1000;
+            int  taillepop=90,nbriter=20,methS=3,methR=1,nbrpointC=3;
+            double tauxM=0.1;
+            double moyevaluation;
+            Node a;
+            double bestEvaluation=1000000.0;
+            int Tpop=0,Iter=0,MethS=0,MethR=0,Points=0;
+            double TauxC=0, TauxM=0;
+            // Noeud.T = generationInstance(problemsize);
+            GA M =new GA();/*
          for( taillepop=4000;taillepop<=5000;taillepop+=100){
              System.out.println(taillepop);
             for( nbriter=1000;nbriter<=2000;nbriter+=100){//iterations
@@ -90,19 +86,20 @@ public class Main {
         }*/
         /*int  taillepop=100,nbriter=100,methS=3,methR=1,nbrpointC=3;
         double tauxM=0.1;*/
-        int nbr=0;
+            int nbr=0;
 
-       // double taillepopp=M.factorial((long) 10.0)/10;
-        //System.out.println(taillepopp);
-for(int i=0;i<100;i++) {
- Individu  p = M.Lancer(10,7000, 1200, 0.1, 3, 2, 4);
-    if(p.evaluation2()==0) nbr++;
-    System.out.println(nbr);
-}
+            // double taillepopp=M.factorial((long) 10.0)/10;
+            //System.out.println(taillepopp);
+            for(int i=0;i<100;i++) {
+                Individu  p = M.Lancer(10,7000, 1200, 0.1, 3, 2, 4);
+                if(p.evaluation2()==0) nbr++;
+                System.out.println(nbr);
+            }
        /* System.out.println(p.evaluation2());
         System.out.println(p.getEtat().toString());*/
-        System.out.println(nbr);
+            System.out.println(nbr);
 
 
-    }
+        }
+
 }
