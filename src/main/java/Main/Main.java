@@ -1,5 +1,7 @@
 package Main;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) throws CloneNotSupportedException {
@@ -9,9 +11,23 @@ public class Main {
         Astar a = new Astar();
         Astar a2 = new Astar();
 
-        Node.n = 10;
-        PSO pso = new PSO(10);
-         pso.search(10, 35, 700000, 0.6, 2, 2);
+        Node.n = 20;
+//        var res = bfs.Recherche(new Node(new ArrayList<>()));
+//        System.out.println("BFS " + res.toString() );
+//        Node res2  = new Node(res);
+//        System.out.println("BFS " + res2.cal_fitness() );
+        PSO pso = new PSO(20);
+//        for (int i = 5; i < 100; i=i+10) {
+//            System.out.println("i = " + i);
+//            double  c2 = 0;
+//            double c1 = 0;
+//            for (int j = 0; j < 10; j++) {
+//                System.out.println("c1 "+c1+" c2 "+c2);
+                pso.search(20  , 800, 55000, 1, 1, 1);
+//                c1 = c1+0.1;
+//                c2 = c2+ 0.1;
+//            }
+//        }
 //        IntArrayList best;
 //        long d,f,s1=0,s2=0,sF=0,sB=0;
 //

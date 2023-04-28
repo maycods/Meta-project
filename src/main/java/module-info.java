@@ -9,6 +9,7 @@ module Main {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires it.unimi.dsi.fastutil;
+    requires kotlin.stdlib;
 //    requires eu.hansolo.tilesfx;
 
 

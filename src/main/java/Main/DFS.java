@@ -1,26 +1,32 @@
 package Main;
 
-import it.unimi.dsi.fastutil.ints.IntArrayList;
-
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class DFS {
-    private Stack<Node> pile = new Stack<>();
-    public  int nbrNdev=0,nbrNgen =1;
+    public int nbrNdev = 0, nbrNgen = 1;
     int sizeInitial;
-    public DFS() {}
-    public IntArrayList Recherche(Node G){
+    private Stack<Node> pile = new Stack<>();
 
-        Node  n;
+    public DFS() {
+    }
+
+    public ArrayList<Integer> Recherche(Node G) {
+
+        Node n;
         pile.add(G);
-        while (!pile.isEmpty()){
+        while (!pile.isEmpty()) {
             nbrNdev++;
-            n=pile.pop();
-            if(n.verification() && n.evaluation()){ return n.getEtat();}
+            n = pile.pop();
+            if (n.verification() && n.evaluation()) {
+                return n.getEtat();
+            }
             if (!n.verification()) {
-                sizeInitial =pile.size();
-                for(int i=0;i<n.getNoeudEnfants().size();i++) {pile.push(n.getNoeudEnfants().get(n.getNoeudEnfants().size()-i-1));}
-                nbrNgen+=(pile.size() - sizeInitial);
+                sizeInitial = pile.size();
+                for (int i = 0; i < n.getNoeudEnfants().size(); i++) {
+                    pile.push(n.getNoeudEnfants().get(n.getNoeudEnfants().size() - i - 1));
+                }
+                nbrNgen += (pile.size() - sizeInitial);
             }
         }
         return null;

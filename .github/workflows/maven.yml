@@ -18,26 +18,26 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up JDK 19
-      uses: actions/setup-java@v3
-      with:
-        java-version: '19'
-        distribution: 'temurin'
-        cache: maven
-    - name: Build Java Maven Project
-      run: |
-        mvn -B package -DskipTests=true -Drevision=${{ github.ref_name }}
-        echo "::set-output name=jar_name::myapp-${{ github.ref_name }}.jar"
-    - name: Create Executable
-      run: |
-        chmod +x target/${{ steps.build_java_maven_project.outputs.jar_name }}
-        echo "::set-output name=jar_name::myapp-${{ github.ref_name }}.jar"
-    - name: Upload JAR File
-      uses: actions/upload-artifact@v2
-      with:
-        name: myapp
-        path: target/${{ steps.build_java_maven_project.outputs.jar_name }}
+      - uses: actions/checkout@v3
+      - name: Set up JDK 19
+        uses: actions/setup-java@v3
+        with:
+          java-version: '19'
+          distribution: 'temurin'
+          cache: maven
+      - name: Build Java Maven Project
+        run: |
+          mvn -B package -DskipTests=true -Drevision=${{ github.ref_name }}
+          echo "::set-output name=jar_name::myapp-${{ github.ref_name }}.jar"
+      - name: Create Executable
+        run: |
+          chmod +x target/${{ steps.build_java_maven_project.outputs.jar_name }}
+          echo "::set-output name=jar_name::myapp-${{ github.ref_name }}.jar"
+      - name: Upload JAR File
+        uses: actions/upload-artifact@v2
+        with:
+          name: myapp
+          path: target/${{ steps.build_java_maven_project.outputs.jar_name }}
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
 #    - name: Update dependency graph

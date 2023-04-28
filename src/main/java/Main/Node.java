@@ -1,6 +1,7 @@
 package Main;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 //implement cloneable
 public class Node implements Cloneable {
@@ -24,9 +25,10 @@ public class Node implements Cloneable {
     public static ArrayList<Integer> generateRandomState(int n) {
         ArrayList<Integer> state = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            var rnd = (int) (Math.random() * n);
+            var rnd = Math.random() * n;
+            state.add(Math.abs((int) (Math.random() * n)));
 //            if (!state.contains(rnd)) {
-                state.add(rnd);
+//            state.add((int) rnd);
 //            } else {
 //                i--;
 //            }
@@ -59,7 +61,7 @@ public class Node implements Cloneable {
         return childs;
     }
 
-    public  Integer cal_fitness() {
+    public Integer cal_fitness() {
         int threatened = 0;
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
@@ -145,8 +147,8 @@ public class Node implements Cloneable {
 
     @Override
     public Node clone() throws CloneNotSupportedException {
-            Node clone = (Node) super.clone();
-            clone.etat = (ArrayList<Integer>) etat.clone();
+        Node clone = (Node) super.clone();
+        clone.etat = (ArrayList<Integer>) etat.clone();
         // TODO: copy mutable state here, so the clone can't change the internals of the original
         return clone;
     }
