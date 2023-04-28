@@ -2,7 +2,9 @@ package Main;
 
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 
-    public class Individu {
+import java.util.LinkedHashSet;
+
+public class Individu {
         public static int n;
         private IntArrayList  Solution;
         private int fitness,longevite;
@@ -42,7 +44,17 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
         public IntArrayList getSolution() {
             return Solution;
         }
+        public static IntArrayList generateRandomState(int p){
 
+        LinkedHashSet<Integer> uniqueArray = new LinkedHashSet<>();
+        while(uniqueArray.size() != p){
+
+            uniqueArray.add( (int)Math.floor(Math.random() * p ) );
+
+        }
+        IntArrayList S= new IntArrayList(uniqueArray);
+        return S;
+    }
     }
 
 

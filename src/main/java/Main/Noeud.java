@@ -232,35 +232,7 @@ public class  Noeud {
         copy.add(newElement);
         return copy;
     }
-    //////////////////////////////////////////////////////////////////////////////////////////
-    public static boolean threatens(int i1, int j1, int i2, int j2) {
-        return (j1 == j2) || (Math.abs(i1 - i2) == Math.abs(j1 - j2));
-    }
-    public static IntArrayList generateRandomState(int n) {
-        IntArrayList state = new IntArrayList();
-        for (int i = 0; i < n; i++) {
-            var rnd = (int) (Math.random() * n);
-            if (!state.contains(rnd)) {
-            state.add(rnd);
-            } else {
-                i--;
-            }
-        }
-        return  state;
-    }
-    public  Integer cal_fitness() {
-        int threatened = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (threatens(i, etat.get(i), j, etat.get(j))) {
-                    threatened++;
-                }
-            }
-        }
-        return threatened;
 
-    }
-///////////////////////////////////////////////////////////////////////////////////////////////
 
 
 }

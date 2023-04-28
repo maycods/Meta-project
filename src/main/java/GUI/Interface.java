@@ -86,27 +86,22 @@ public class  Interface  extends Application {
         MenuItem PSO=choix.getItems().get(5);
 
         setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
-        //setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel, remplacement);
-        bfs.setOnAction(event ->{
+         bfs.setOnAction(event ->{
             setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
-           // setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
-           choix.setText(bfs.getText());
+            choix.setText(bfs.getText());
         });
         dfs.setOnAction(event ->{
             setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel,  remplacementLabel,remplacement, nbrpnt, nbrpoint);
-          //  setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
-            choix.setText(dfs.getText());
+             choix.setText(dfs.getText());
         });
         h1.setOnAction(event -> {
             choix.setText(h1.getText());
             setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
-            //setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
-        });
+           });
         h2.setOnAction(event -> {
             choix.setText(h2.getText());
             setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
-           // setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
-        });
+          });
         GA.setOnAction(event -> {
             nbiter.setText("1000");
             nbpop.setText("500");
@@ -129,7 +124,6 @@ public class  Interface  extends Application {
             nbiter.setText("1000");
             nbpop.setText("500");
 
-            //setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
             setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
             choix.setText(PSO.getText());
             nbpop.setVisible(true);
@@ -205,7 +199,7 @@ public class  Interface  extends Application {
                         gen=B.nbrNgen;
                         break;
                     case "PSO"://TODO in case of meta 9alek lzm nkhelou l user il choisis les parametres si il veut sinon par default imed le meilleur
-                        PSO pso = new PSO(a);
+                        PSO pso = new PSO();
 
                         var nbpopVal = (int)Integer.parseInt(nbpop.getText());
                         var nbiterVal = (int)Integer.parseInt(nbiter.getText());

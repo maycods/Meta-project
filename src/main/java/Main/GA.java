@@ -13,14 +13,6 @@ import java.util.Comparator;
 
 
 public class GA {
-        public double factorial(Long n){
-            if(n==0) {
-                return 1.0;
-            }
-            else {
-                return n * factorial(n - 1);
-            }
-        }
 
         int i=0;
         public IntArrayList SoluAleatoire(int p){
@@ -87,10 +79,9 @@ public class GA {
             int k=0;
             for(int i=0;i<parent1.getSolution().size();i++){
                 if(k<rdm.size() && rdm.get(k)==i) k++;
-                if(k%2!=0){
+                if(k%2!=0 && !soluchild1.contains(parent2.getSolution().getInt(i)) && !soluchild2.contains(parent1.getSolution().getInt(i))){
                     soluchild1.add(parent2.getSolution().getInt(i));
                     soluchild2.add(parent1.getSolution().getInt(i));
-
                 }else{
                     soluchild1.add(parent1.getSolution().getInt(i));
                     soluchild2.add(parent2.getSolution().getInt(i));

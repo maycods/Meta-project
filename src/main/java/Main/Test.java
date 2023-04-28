@@ -86,18 +86,18 @@ public class Test {
         }*/
         /*int  taillepop=100,nbriter=100,methS=3,methR=1,nbrpointC=3;
         double tauxM=0.1;*/
-            int nbr=0;
-
+            int nbr=0,nbr2=0;
+            PSO P = new PSO();
             // double taillepopp=M.factorial((long) 10.0)/10;
             //System.out.println(taillepopp);
             for(int i=0;i<100;i++) {
-                Individu  p = M.Lancer(10,7000, 1200, 0.1, 3, 2, 4);
-                if(p.evaluation2()==0) nbr++;
-                System.out.println(nbr);
+                 Individu  pso = P.search(15,100,100);
+                if(pso.evaluation2()==0) nbr2++;
             }
        /* System.out.println(p.evaluation2());
         System.out.println(p.getEtat().toString());*/
             System.out.println(nbr);
+            System.out.println(nbr2);
 
 
         }
