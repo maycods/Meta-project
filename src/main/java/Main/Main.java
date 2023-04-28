@@ -11,10 +11,10 @@ public class Main {
         Astar a = new Astar();
         Astar a2 = new Astar();
 
-        Node.n = 20;
-//        var res = bfs.Recherche(new Node(new ArrayList<>()));
+        Noeud.n = 20;
+//        var res = bfs.Recherche(new Noeud(new ArrayList<>()));
 //        System.out.println("BFS " + res.toString() );
-//        Node res2  = new Node(res);
+//        Noeud res2  = new Noeud(res);
 //        System.out.println("BFS " + res2.cal_fitness() );
         PSO pso = new PSO(20);
 //        for (int i = 5; i < 100; i=i+10) {
@@ -32,28 +32,28 @@ public class Main {
 //        long d,f,s1=0,s2=0,sF=0,sB=0;
 //
 //        for(int i=6;i<20;i++){
-//            Node.n=i;
+//            Noeud.n=i;
 //           for(int j=0;j<20;j++){
 //                d=System.currentTimeMillis();
-//                best=a.Recherche(new Node(new IntArrayList(),0),1);//19
+//                best=a.Recherche(new Noeud(new IntArrayList(),0),1);//19
 //                f=System.currentTimeMillis();
 //                s1+=f-d;
 //               //System.out.println(best.toString());
 //
 //                d=System.currentTimeMillis();
-//                best=a2.Recherche(new Node(new IntArrayList(),0),2);//20
+//                best=a2.Recherche(new Noeud(new IntArrayList(),0),2);//20
 //                f=System.currentTimeMillis();
 //                s2+=f-d;
 //                //System.out.println(best.toString());
 //
 //                d=System.currentTimeMillis();
-//                best=bfs.Recherche(new Node(new IntArrayList()));// 10
+//                best=bfs.Recherche(new Noeud(new IntArrayList()));// 10
 //                f=System.currentTimeMillis();
 //                sB+=f-d;
 //               // System.out.println(best.toString());
 //
 //                d=System.currentTimeMillis();
-//                best=dfs.Recherche(new Node(new IntArrayList()));//12
+//                best=dfs.Recherche(new Noeud(new IntArrayList()));//12
 //                f=System.currentTimeMillis();
 //                sF+=f-d;
 //              // System.out.println(best.toString());

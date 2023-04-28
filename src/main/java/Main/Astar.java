@@ -1,5 +1,7 @@
 package Main;
 
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
@@ -7,16 +9,16 @@ import java.util.PriorityQueue;
 public class Astar {
     public int nbrNdev = 0, nbrNgen = 1;
     int sizeInitial;
-    private PriorityQueue<Node> ouvert = new PriorityQueue<Node>(new Comparator<Node>() {
+    private PriorityQueue<Noeud> ouvert = new PriorityQueue<Noeud>(new Comparator<Noeud>() {
         @Override
-        public int compare(Node o1, Node o2) {
+        public int compare(Noeud o1, Noeud o2) {
             return (o1.getF() > o2.getF()) ? 1 : -1;
         }
     });
 
-    public int h(Node n, int hi) {
+    public int h(Noeud n, int hi) {
         int m = n.getEtat().size() - 1;
-        if (m == -1) return Node.n;
+        if (m == -1) return Noeud.n;
         if (m > 0) {
             for (int j = m - 1; j >= 0; j--) {
                 if (m - j == Math.abs(n.getEtat().get(m) - n.getEtat().get(j))) return 1000;
@@ -25,21 +27,21 @@ public class Astar {
         if (hi == 1) {
 
             int p = n.getEtat().get(m);
-            return Math.min(p, m) + (Node.n - p) + (Node.n - m) + Math.min((Node.n - p - 1), (Node.n - m - 1));
+            return Math.min(p, m) + (Noeud.n - p) + (Noeud.n - m) + Math.min((Noeud.n - p - 1), (Noeud.n - m - 1));
 
         } else {
-            return (Node.n - m);
+            return (Noeud.n - m);
         }
     }
 
-    public int g(Node n) {
+    public int g(Noeud n) {
 
         return n.getProfondeur();
     }
 
-    public ArrayList<Integer> Recherche(Node G, int hi) {
+    public IntArrayList Recherche(Noeud G, int hi) {
 
-        Node n;
+        Noeud n;
         G.setF(g(G) + h(G, hi));
         ouvert.add(G);
 
@@ -53,7 +55,7 @@ public class Astar {
             }
 
             sizeInitial = ouvert.size();
-            for (Node enfant : n.getNoeudEnfants()) {
+            for (Noeud enfant : n.getNoeudEnfants()) {
 
                 enfant.setF(g(enfant) + h(enfant, hi));
                 ouvert.add(enfant);

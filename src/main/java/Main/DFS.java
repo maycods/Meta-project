@@ -1,19 +1,21 @@
 package Main;
 
+import it.unimi.dsi.fastutil.ints.IntArrayList;
+
 import java.util.ArrayList;
 import java.util.Stack;
 
 public class DFS {
     public int nbrNdev = 0, nbrNgen = 1;
     int sizeInitial;
-    private Stack<Node> pile = new Stack<>();
+    private Stack<Noeud> pile = new Stack<>();
 
     public DFS() {
     }
 
-    public ArrayList<Integer> Recherche(Node G) {
+    public IntArrayList Recherche(Noeud G) {
 
-        Node n;
+        Noeud n;
         pile.add(G);
         while (!pile.isEmpty()) {
             nbrNdev++;

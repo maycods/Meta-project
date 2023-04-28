@@ -1,5 +1,6 @@
 package GUI;
 
+import it.unimi.dsi.fastutil.ints.IntArrayList;
 import javafx.scene.image.Image;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -10,7 +11,7 @@ import javafx.scene.shape.Rectangle;
 import java.util.ArrayList;
 
 class ChessBoard extends GridPane {
-    public ChessBoard(int size, ArrayList<Integer> sol, double width, double height) {
+    public ChessBoard(int size, IntArrayList sol, double width, double height) {
 
         var cream = Color.web("#ebebd3");
         var green = Color.web("#749454");
