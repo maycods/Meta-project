@@ -11,19 +11,19 @@ public class Main {
         Astar a = new Astar();
         Astar a2 = new Astar();
 
-        Noeud.n = 20;
+        Noeud.n = 40;
 //        var res = bfs.Recherche(new Noeud(new ArrayList<>()));
 //        System.out.println("BFS " + res.toString() );
 //        Noeud res2  = new Noeud(res);
 //        System.out.println("BFS " + res2.cal_fitness() );
-        PSO pso = new PSO(20);
+        PSO pso = new PSO(40);
 //        for (int i = 5; i < 100; i=i+10) {
-//            System.out.println("i = " + i);
-//            double  c2 = 0;
-//            double c1 = 0;
-//            for (int j = 0; j < 10; j++) {
-//                System.out.println("c1 "+c1+" c2 "+c2);
-                pso.search(20  , 800, 55000, 1, 1, 1);
+//            System.out. < 10; j++) {
+//                System.out.pprintln("i = " + i);
+////            double  c2 = 0;
+////            double c1 = 0;
+////            for (int j = 0; jrintln("c1 "+c1+" c2 "+c2);
+                pso.search(40  , 50000, 300);
 //                c1 = c1+0.1;
 //                c2 = c2+ 0.1;
 //            }

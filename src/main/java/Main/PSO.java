@@ -3,6 +3,8 @@ package Main;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class PSO {
     public int n;
@@ -11,14 +13,12 @@ public class PSO {
         this.n = n;
     }
 
-    public Individu search(int n, int nbPop, int nbIteration, double w, int c1, int c2) {
+    public Individu search(int n, int nbPop, int nbIteration) {
         ArrayList<Noeud> population;
         ArrayList<IntArrayList> pBest;
         IntArrayList gBest = null;
         int gBestFitness = Integer.MAX_VALUE;
-        // TODO implement the PSO algorithm
         population = new ArrayList<Noeud>();
-        ArrayList<Double> velocity = new ArrayList<Double>();
         pBest = new ArrayList<>();
         ArrayList<Integer> pBestFitness = new ArrayList<>();
         for (int i = 0; i < nbPop; i++) {
@@ -26,58 +26,44 @@ public class PSO {
             var copie = (IntArrayList)rand.clone();
 
             population.add(new Noeud(copie));
-            velocity.add(Math.random()*n);
             pBest.add(rand);
             pBestFitness.add(population.get(i).cal_fitness());
-//            System.out.println("pop " + population.get(i).getEtat() + " " + population.get(i).cal_fitness());
             if (population.get(i).cal_fitness() < gBestFitness) {
                 gBest = population.get(i).getEtat();
                 gBestFitness = population.get(i).cal_fitness();
             }
-
         }
         System.out.println("gBest = " + gBest + " " + gBestFitness);
         int i = 0;
-        int nbpbest = 0;
-        int nbgbest = 0;
         while (i < nbIteration) {
+//            System.out.println("iteration numero : "+i);
             for (int j = 0; j < nbPop; j++) {
-                // update the velocity
                 double r1 = Math.random();
-                double r2 = Math.random();
-                double v = 0.0;
-//                v = w * velocity.get(j) + c1 * r1 * (distance(pBest.get(j), population.get(j))) + c2 * r2 * (distance(gBest, population.get(j)));
-                if(r1 < (double)1/3){
-                    population.set(j,croisement(population.get(j), gBest, (double)1/4));
-                } else if (r1 < (double) 2 /3 && r1 > (double) 1 /3) {
-                    population.set(j, croisement(population.get(j), pBest.get(j), (double) 2 / 4));
-//                }
+                var p = population.get(j);
+                if(r1 < 0.40){
+                    p = croisement(p.getEtat(), gBest);
+//                    population.set(j,croisement(population.get(j).getEtat(), gBest));
+                } else if (r1 < 0.60 && r1 > 0.40) {
+                    p = croisement(p.getEtat(), pBest.get(j));
+//                    population.set(j, croisement(population.get(j).getEtat(), pBest.get(j)));
                 } else {
-                    population.set(j,croisement(population.get(j), Noeud.generateRandomState(n), (double) 3/4));
-//                    population.set(j, croisement(population.get(j),pBest.get((int) (Math.random()*n))));
+                    p = croisement(p.getEtat(), Noeud.generateRandomState(n));
+//                    population.set(j,croisement(pBest.get(j), Noeud.generateRandomState(n)));
                 }
-
-
-//                velocity.set(j, velocity.get(j));
-                var newNoeud = new Noeud(updateParticle(population.get(j), v));
-
+                Noeud newNoeud = new Noeud(p.getEtat());
+                population.set(j, newNoeud);
                 if (newNoeud.cal_fitness() < pBestFitness.get(j)){
-                    population.set(j, newNoeud);
-//                    System.out.println("pbest i = " + i + " j = " + j);
-
-                        nbpbest++;
                         pBest.set(j, population.get(j).getEtat());
                         pBestFitness.set(j, population.get(j).cal_fitness());
                     if (pBestFitness.get(j) < gBestFitness) {
                         System.out.println("i = " + i + " j = " + j);
                         System.out.println("gBest = " + gBest + " " + gBestFitness);
-                        nbgbest++;
                         gBest = pBest.get(j);
                         gBestFitness = pBestFitness.get(j);
                     }
+                    if (gBestFitness == 0) break;
                 }
             }
-            if (gBestFitness == 0) break;
             i++;
         }
 
@@ -89,57 +75,45 @@ public class PSO {
         return x;
     }
 
-    private static Noeud croisement  (Noeud Noeud1, IntArrayList Noeud2, double taux) {
+    private static Noeud croisement  (IntArrayList Noeud1, IntArrayList Noeud2) {
         IntArrayList child = new IntArrayList();
         //partition the parents into 2 parts and then swap them
-        int partition = (int) Math.floor(Math.random() * Noeud1.getEtat().size());
+        int partition = (int) Math.floor(Math.random() * Noeud1.size());
+//        int partition = (int) Noeud1.size()/2;
         var rnd  = Math.random();
-        if (Math.random() < taux) {
+        if (rnd < 0.5) {
             for (int i = 0; i < partition; i++) {
-                child.add(Noeud1.getEtat().getInt(i));
+                child.add(Noeud1.getInt(i));
             }
-            for (int i = partition; i < Noeud2.size(); i++) {
-                child.add(Noeud2.get(i));
+            int j =0 ;
+
+            while(child.size() < Noeud2.size()){
+                if (!child.contains(Noeud2.getInt(j))){
+                    child.add(Noeud2.getInt(j));
+                }
+                j++;
+                j = j % Noeud1.size();
             }
+//            for (int i = partition; i < Noeud2.size(); i++) {
+//                child.add(Noeud2.get(i));
+//            }
         } else {
             for (int i = partition; i < Noeud2.size(); i++) {
                 child.add(Noeud2.get(i));
             }
-            for (int i = 0; i < partition; i++) {
-                child.add(Noeud2.get(i));
+            int j = 0;
+            while(child.size() < Noeud1.size()){
+                if (!child.contains(Noeud1.getInt(j))){
+                    child.add(Noeud1.getInt(j));
+                }
+                j++;
+                j = j % Noeud1.size();
             }
+//            for (int i = 0; i < partition; i++) {
+//                child.add(Noeud2.get(i));
+//            }
         }
         return new Noeud(child);
-    }
-    private IntArrayList updateParticle(Noeud particle, double v) {
-        // TODO update the particle position
-        IntArrayList sol = particle.getEtat();
-
-        for (int i = 0; i < n; i++) {
-            var val = sol.get(i);
-            var newVal = val +  v ;
-            newVal = newVal % n ;
-
-            sol.set(i, (int) Math.round(newVal));
-        }
-        return sol;
-    }
-
-    private Integer distance(IntArrayList d, Noeud Noeud2) {
-        //hamming distance
-//        int distance = 0;
-//        for (int i = 0; i < n; i++) {
-//            if (d.get(i) != Noeud2.getEtat().get(i)) {
-//                distance++;
-//            }
-//        }
-//        System.out.println("distance = " + distance);
-//        return distance;
-        int distance = 0;
-        for (int i = 0; i < n; i++) {
-            distance = distance + Math.abs(d.get(i) - Noeud2.getEtat().get(i));
-        }
-        return  distance%n;
     }
 
 

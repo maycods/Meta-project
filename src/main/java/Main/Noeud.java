@@ -240,13 +240,13 @@ public class  Noeud {
         IntArrayList state = new IntArrayList();
         for (int i = 0; i < n; i++) {
             var rnd = (int) (Math.random() * n);
-//            if (!state.contains(rnd)) {
+            if (!state.contains(rnd)) {
             state.add(rnd);
-//            } else {
-//                i--;
-//            }
+            } else {
+                i--;
+            }
         }
-        return  state.clone();
+        return  state;
     }
     public  Integer cal_fitness() {
         int threatened = 0;

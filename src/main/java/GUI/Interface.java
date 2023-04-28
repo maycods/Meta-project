@@ -35,6 +35,36 @@ public class  Interface  extends Application {
         MenuButton choix = (MenuButton)scene.lookup("#choose");
         TextField textField = (TextField)scene.lookup("#taille");
 
+        TextField nbiter = (TextField)scene.lookup("#nbiter");
+        TextField nbpop = (TextField)scene.lookup("#tpop");
+        TextField mut = (TextField)scene.lookup("#mut");
+        TextField selection = (TextField)scene.lookup("#select");
+        TextField remplacement = (TextField)scene.lookup("#remp");
+        nbiter.setText("1000");
+        nbpop.setText("500");
+        mut.setText("0.5");
+        selection.setText("1");
+        remplacement.setText("1");
+
+
+        Label nbiterLabel = (Label) scene.lookup("#nbiterl");
+        Label tpopLabel = (Label) scene.lookup("#tpopl");
+        Label mutLabel = (Label) scene.lookup("#mutl");
+        Label selectLabel = (Label) scene.lookup("#selectl");
+        Label remplacementLabel = (Label) scene.lookup("#rempl");
+
+        remplacementLabel.setVisible(false);
+        nbiterLabel.setVisible(false);
+        nbpop.setVisible(false);
+        mut.setVisible(false);
+        selection.setVisible(false);
+        nbiter.setVisible(false);
+        tpopLabel.setVisible(false);
+        mutLabel.setVisible(false);
+        selectLabel.setVisible(false);
+        remplacement.setVisible(false);
+
+
         Text devTOnothing  = (Text)scene.lookup("#data1");
         Text genTOevaluation = (Text)scene.lookup("#data11");
 
@@ -51,23 +81,49 @@ public class  Interface  extends Application {
         MenuItem GA=choix.getItems().get(4);
         MenuItem PSO=choix.getItems().get(5);
 
-        dfs.setOnAction(event -> {
-            choix.setText(dfs.getText());
+        setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
+        setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel, remplacement);
+        bfs.setOnAction(event ->{
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
+           choix.setText(bfs.getText());
         });
-        bfs.setOnAction(event -> {
-            choix.setText(bfs.getText());
+        dfs.setOnAction(event ->{
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel,  remplacementLabel,remplacement);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
+            choix.setText(dfs.getText());
         });
         h1.setOnAction(event -> {
             choix.setText(h1.getText());
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
         });
         h2.setOnAction(event -> {
             choix.setText(h2.getText());
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
         });
         GA.setOnAction(event -> {
             choix.setText(GA.getText());
+            nbiterLabel.setVisible(true);
+            nbpop.setVisible(true);
+            mut.setVisible(true);
+            selection.setVisible(true);
+            nbiter.setVisible(true);
+            tpopLabel.setVisible(true);
+            mutLabel.setVisible(true);
+            selectLabel.setVisible(true);
+            remplacementLabel.setVisible(true);
+            remplacement.setVisible(true);
         });
         PSO.setOnAction(event -> {
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement);
             choix.setText(PSO.getText());
+            nbpop.setVisible(true);
+            tpopLabel.setVisible(true);
+            nbiter.setVisible(true);
+            nbiterLabel.setVisible(true);
         });
 
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -151,7 +207,9 @@ public class  Interface  extends Application {
                     case "PSO"://TODO in case of meta 9alek lzm nkhelou l user il choisis les parametres si il veut sinon par default imed le meilleur
                         PSO pso = new PSO(a);
                         start = System.currentTimeMillis();
-                        Individu p = pso.search(a, 20, 20, 0.5, 1, 2);
+                        var nbpopVal = (int)Integer.parseInt(nbpop.getText());
+                        var nbiterVal = (int)Integer.parseInt(nbiter.getText());
+                        Individu p = pso.search(a, nbpopVal, nbiterVal);
                         bestSol=p.getSolution();
                         end = System.currentTimeMillis();
                         genTOevaluation.setText("nombre de reines en dangers: "+p.evaluation2());
@@ -160,7 +218,12 @@ public class  Interface  extends Application {
                     case "GA":
                         GA M =new GA();
                         start = System.currentTimeMillis();
-                        Individu pa = M.Lancer(a,7000, 1200, 0.1, 3, 2, 4);
+                         nbpopVal = (int)Integer.parseInt(nbpop.getText());
+                         nbiterVal = (int)Integer.parseInt(nbiter.getText());
+                         var mutval = Double.parseDouble(mut.getText());
+                         var method = Integer.parseInt(selection.getText());
+                         var rempval = Integer.parseInt(remplacement.getText());
+                        Individu pa = M.Lancer(a,nbpopVal, nbiterVal, mutval, method, rempval, 4);
                         bestSol=pa.getSolution();
                         end = System.currentTimeMillis();
                         genTOevaluation.setText("nombre de reines en dangers: "+(pa.evaluation2()));
@@ -192,6 +255,20 @@ public class  Interface  extends Application {
         });
 
     }
+
+    private void setVisible(MenuButton choix, TextField nbiter, TextField nbpop, TextField mut, TextField selection, Label nbiterLabel, Label tpopLabel, Label mutLabel, Label selectLabel, Label l, TextField t) {
+            nbiterLabel.setVisible(false);
+            nbpop.setVisible(false);
+            mut.setVisible(false);
+            selection.setVisible(false);
+            nbiter.setVisible(false);
+            tpopLabel.setVisible(false);
+            mutLabel.setVisible(false);
+            selectLabel.setVisible(false);
+            l.setVisible(false);
+            t.setVisible(false);
+    }
+
     public static void main(String[] args) {
         launch();
     }
