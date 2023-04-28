@@ -30,6 +30,7 @@
 
 .text-class {
     -fx-fill: white; /* change "red" to the color you want */
+    -fx-font-family: "Comic Sans MS";
 }
 
 .drop-down {
@@ -49,5 +50,5 @@
 
 .text {
     -fx-font-size: 15px;
-
+    -fx-font-family: "Comic Sans MS";
 }

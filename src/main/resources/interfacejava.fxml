@@ -70,7 +70,7 @@
                                     </font>
                                 </MenuButton>
 
-                                <Text fill="WHITE" layoutX="10.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-class" text="Entrez la taille de l'echiquier">
+                                <Text fill="WHITE" layoutX="10.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0"  text="Entrez la taille de l'echiquier">
 
                                     <font>
                                         <Font name="Comic Sans MS" size="15.0" />
@@ -97,23 +97,33 @@
                                         <Font name="Comic Sans MS" size="13.0" />
                                     </font>
                                 </TextField>
-                        <Label id="nbiterl" layoutX="5.0" layoutY="218.0" text="nbIter" textFill="WHITE" />
+                        <Label id="nbiterl" layoutX="5.0" layoutY="218.0" text="nbIter" styleClass="text-class" textFill="WHITE" />
                         <TextField id="nbiter" layoutX="61.0" layoutY="216.0" prefHeight="25.0" prefWidth="40.0" />
-                        <Label id="tpopl" layoutX="110.0" layoutY="219.0" text="Tpop" textFill="WHITE" />
-                        <TextField id="tpop" layoutX="174.0" layoutY="217.0" prefHeight="25.0" prefWidth="40.0" />
-                        <Label id="selectl" layoutX="3.0" layoutY="256.0" text="selction" textFill="WHITE" />
-                        <TextField id="select" layoutX="61.0" layoutY="254.0" prefHeight="25.0" prefWidth="40.0" />
-                        <Label id="mutl" layoutX="110.0" layoutY="257.0" prefHeight="21.0" prefWidth="56.0" text="mut" textFill="WHITE" />
-                        <TextField id="mut" layoutX="174.0" layoutY="254.0" prefHeight="25.0" prefWidth="40.0" />
-                        <Label id="rempl" layoutX="54.0" layoutY="295.0" text="rempl." textFill="WHITE" />
-                        <TextField id="remp" layoutX="112.0" layoutY="293.0" prefHeight="25.0" prefWidth="40.0" />
 
-                            </children>
+                        <Label id="tpopl" layoutX="110.0" layoutY="219.0" text="Tpop" styleClass="text-class"  textFill="WHITE" />
+                        <TextField id="tpop" layoutX="174.0" layoutY="217.0" prefHeight="25.0" prefWidth="40.0" />
+
+
+                        <Label id="selectl" layoutX="3.0" layoutY="256.0" text="selction" styleClass="text-class" textFill="WHITE" />
+                        <TextField id="select" layoutX="61.0" layoutY="254.0" prefHeight="25.0" prefWidth="40.0" />
+
+                        <Label id="mutl" layoutX="110.0" layoutY="257.0" prefHeight="21.0" styleClass="text-class"  prefWidth="56.0" text="mut" textFill="WHITE" />
+                        <TextField id="mut" layoutX="174.0" layoutY="254.0" prefHeight="25.0" prefWidth="40.0" />
+
+
+                        <Label id="rempl" layoutX="3.0" layoutY="295.0" text="rempl." styleClass="text-class"  textFill="WHITE" />
+                        <TextField id="remp" layoutX="61.0" layoutY="293.0" prefHeight="25.0" prefWidth="40.0" />
+
+                        <Label id="nbrpnts" layoutX="110.0" layoutY="295.0" prefHeight="21.0" styleClass="text-class"  prefWidth="56.0" text="nbrpnt" textFill="WHITE" />
+                        <TextField id="nbrpnt" layoutX="174.0" layoutY="293.0" prefHeight="25.0" prefWidth="40.0" />
+
+
+                        </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="342.0" prefWidth="189.0">
                             <children>
 
-                                <Text fx:id="data" fill="WHITE" layoutX="86.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-class" text="Details" textAlignment="CENTER" wrappingWidth="63.0">
+                                <Text fx:id="data" fill="WHITE" layoutX="86.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0"  text="Details" textAlignment="CENTER" wrappingWidth="63.0">
                                     <font>
                                         <Font name="Comic Sans MS" size="18.0" />
                                     </font>
@@ -129,9 +139,7 @@
                                     </font>
                                 </Text>
                                 <Text fx:id="data111" fill="WHITE" layoutX="11.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="temp d'execution : " wrappingWidth="144.0">
-                                    <font>
-                                        <Font name="Comic Sans MS" size="18.0" />
-                                    </font>
+
                                 </Text>
                                 <Text id="exe" fx:id="data2" fill="WHITE" layoutX="155.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" textAlignment="CENTER" wrappingWidth="63.0">
                                     <font>

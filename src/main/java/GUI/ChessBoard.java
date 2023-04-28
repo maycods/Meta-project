@@ -26,7 +26,7 @@ class ChessBoard extends GridPane {
             for (int j = 0; j < size; j++) {
                 Rectangle bg = new Rectangle(squareWidth, squareHeight);
                 StackPane pane = new StackPane(bg);
-                if (sol.get(i) == j) {
+                if (sol.getInt(i) == j) {
 
                     Rectangle square = new Rectangle(squareWidth - 4, squareHeight - 4);
                     square.setFill(blackQueenImg);

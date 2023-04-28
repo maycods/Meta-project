@@ -34,6 +34,7 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
             for (int i = 0; i <Solution.size(); i++) {
                 for (int j = i + 1; j < Solution.size(); j++) {
                     if (j - i == Math.abs(Solution.getInt(i) - Solution.getInt(j)))  c++;
+                    if (Solution.getInt(i) == Solution.getInt(j)) c++;
                 }
             }
             return c;

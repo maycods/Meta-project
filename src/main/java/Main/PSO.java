@@ -12,7 +12,46 @@ public class PSO {
     public PSO(int n) {
         this.n = n;
     }
+    private static Noeud croisement  (IntArrayList Noeud1, IntArrayList Noeud2) {
+        IntArrayList child = new IntArrayList();
+        //partition the parents into 2 parts and then swap them
+        int partition = (int) Math.floor(Math.random() * Noeud1.size());
+//        int partition = (int) Noeud1.size()/2;
+        var rnd  = Math.random();
+        if (rnd < 0.5) {
+            for (int i = 0; i < partition; i++) {
+                child.add(Noeud1.getInt(i));
+            }
+            int j =0 ;
 
+            while(child.size() < Noeud2.size()){
+                if (!child.contains(Noeud2.getInt(j))){
+                    child.add(Noeud2.getInt(j));
+                }
+                j++;
+                j = j % Noeud1.size();
+            }
+//            for (int i = partition; i < Noeud2.size(); i++) {
+//                child.add(Noeud2.get(i));
+//            }
+        } else {
+            for (int i = partition; i < Noeud2.size(); i++) {
+                child.add(Noeud2.get(i));
+            }
+            int j = 0;
+            while(child.size() < Noeud1.size()){
+                if (!child.contains(Noeud1.getInt(j))){
+                    child.add(Noeud1.getInt(j));
+                }
+                j++;
+                j = j % Noeud1.size();
+            }
+//            for (int i = 0; i < partition; i++) {
+//                child.add(Noeud2.get(i));
+//            }
+        }
+        return new Noeud(child);
+    }
     public Individu search(int n, int nbPop, int nbIteration) {
         ArrayList<Noeud> population;
         ArrayList<IntArrayList> pBest;
@@ -75,46 +114,7 @@ public class PSO {
         return x;
     }
 
-    private static Noeud croisement  (IntArrayList Noeud1, IntArrayList Noeud2) {
-        IntArrayList child = new IntArrayList();
-        //partition the parents into 2 parts and then swap them
-        int partition = (int) Math.floor(Math.random() * Noeud1.size());
-//        int partition = (int) Noeud1.size()/2;
-        var rnd  = Math.random();
-        if (rnd < 0.5) {
-            for (int i = 0; i < partition; i++) {
-                child.add(Noeud1.getInt(i));
-            }
-            int j =0 ;
 
-            while(child.size() < Noeud2.size()){
-                if (!child.contains(Noeud2.getInt(j))){
-                    child.add(Noeud2.getInt(j));
-                }
-                j++;
-                j = j % Noeud1.size();
-            }
-//            for (int i = partition; i < Noeud2.size(); i++) {
-//                child.add(Noeud2.get(i));
-//            }
-        } else {
-            for (int i = partition; i < Noeud2.size(); i++) {
-                child.add(Noeud2.get(i));
-            }
-            int j = 0;
-            while(child.size() < Noeud1.size()){
-                if (!child.contains(Noeud1.getInt(j))){
-                    child.add(Noeud1.getInt(j));
-                }
-                j++;
-                j = j % Noeud1.size();
-            }
-//            for (int i = 0; i < partition; i++) {
-//                child.add(Noeud2.get(i));
-//            }
-        }
-        return new Noeud(child);
-    }
 
 
 }
