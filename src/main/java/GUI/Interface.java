@@ -50,8 +50,8 @@ public class Interface extends Application {
 
         TextField C1 = (TextField) scene.lookup("#c1");
         TextField C2 = (TextField) scene.lookup("#c2");
-        C1.setText("0.5");
-        C2.setText("0.4");
+        C1.setText("0.6");
+        C2.setText("0.7");
         mut.setText("0.3");
         selection.setText("1");
         remplacement.setText("1");
@@ -154,7 +154,7 @@ public class Interface extends Application {
         });
         PSO.setOnAction(event -> {
             nbiter.setText("2000");
-            nbpop.setText("200");
+            nbpop.setText("2500");
 
             setInvisible(elts);
             choix.setText(PSO.getText());
