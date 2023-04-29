@@ -21,7 +21,7 @@ public class Main {
 ////            double  c2 = 0;
 ////            double c1 = 0;
 ////            for (int j = 0; jrintln("c1 "+c1+" c2 "+c2);
-        pso.search(800, 2500, 0.40, 0.50);
+        pso.search(300, 2500, 0.40, 0.50);
 //                c1 = c1+0.1;
 //                c2 = c2+ 0.1;
 //            }

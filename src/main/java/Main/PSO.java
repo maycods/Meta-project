@@ -74,10 +74,10 @@ public class PSO {
     private static Noeud croisement(IntArrayList Noeud1, IntArrayList Noeud2) {
         IntArrayList child = new IntArrayList();
         //partition the parents into 2 parts and then swap them
-        int partition = (int) Math.floor(Math.random() * Noeud1.size() / 4);
+        int partition = (int) Math.floor(Math.random() * Noeud1.size() );
 
         var rnd = Math.random();
-        if (rnd < 0.5) {
+        if (rnd < 0.3) {
             for (int i = 0; i < partition; i++) {
                 child.add(Noeud1.getInt(i));
             }
