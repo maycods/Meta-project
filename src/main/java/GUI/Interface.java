@@ -234,15 +234,15 @@ public class Interface extends Application {
                         break;
                     case "PSO"://TODO in case of meta 9alek lzm nkhelou l user il choisis les parametres si il veut sinon par default imed le meilleur
                         PSO pso = new PSO(a);
-                        start = System.currentTimeMillis();
                         var nbpopVal = (int) Integer.parseInt(nbpop.getText());
                         var nbiterVal = (int) Integer.parseInt(nbiter.getText());
                         var c1val = Double.parseDouble(C1.getText());
                         var c2val = Double.parseDouble(C2.getText());
+                        start = System.currentTimeMillis();
                         Individu p = pso.search(nbpopVal, nbiterVal, c1val, c2val);
-                        bestSol = p.getSolution();
                         end = System.currentTimeMillis();
-                        genTOevaluation.setText("nombre de reines en dangers: " + p.evaluation2());
+                        bestSol = p.getSolution();
+                        genTOevaluation.setText("nombre de reines en dangers: " + p.cal_fitness());
                         b = true;
                         break;
                     case "GA":
@@ -260,9 +260,7 @@ public class Interface extends Application {
                         Individu pa = M.Lancer(a, nbpopVal, nbiterVal, mutval, method, rempval, nombrepnt, tauxC, taillsoupop);
                         end = System.currentTimeMillis();
                         bestSol = pa.getSolution();
-                        System.out.println(bestSol.toString());
-                        System.out.println(pa.evaluation2());
-                        genTOevaluation.setText("nombre de reines en dangers: " + (pa.evaluation2()));
+                        genTOevaluation.setText("nombre de reines en dangers: " + (pa.cal_fitness()));
                         b = true;
                         break;
                     default:

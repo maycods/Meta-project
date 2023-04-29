@@ -56,7 +56,7 @@ public class Test {
         //System.out.println(taillepopp);
         // for(int i=0;i<100;i++) {
         Individu pso = P.search(8000, 2000, 0.5, 0.4);//700 500 3 1 2 0.017
-System.out.println(pso.evaluation2());
+//System.out.println(pso.evaluation2());
 
        // System.out.println(g.Lancer(10, 100, 100, 0.5, 1, 1, 3, 0.7, 50).evaluation2());
          /*

@@ -12,23 +12,11 @@ public class GA {
 
     int i = 0;
 
-    public IntArrayList SoluAleatoire(int p) {
-
-        LinkedHashSet<Integer> uniqueArray = new LinkedHashSet<>();
-        while (uniqueArray.size() != p) {
-
-            uniqueArray.add((int) Math.floor(Math.random() * p));
-
-        }
-        IntArrayList S = new IntArrayList(uniqueArray);
-        return S;
-    }
-
     public ArrayList<Individu> GenerationPopulation(int n, int p) {
         Individu.n = p;
         ArrayList<Individu> population = new ArrayList<Individu>();
         for (int i = 0; i < n; i++) {
-            population.add(new Individu(0, SoluAleatoire(p)));
+            population.add(new Individu(0, Individu.generateRandomSol(p)));
         }
         return population;
     }
@@ -182,18 +170,15 @@ public class GA {
     }
 
     public Individu Lancer(int tailleProblm, int taillePop, int nbrIter, double tauxM, int methodeSel, int methodeRep, int nbrpoints, double tauC, int taillesouspop) {
-        boolean b;
         Individu best, bestg;
         ArrayList<Individu> parents = new ArrayList<>(), pop, children;
 
         pop = GenerationPopulation(taillePop, tailleProblm);
         EvaluationPop(pop);
         bestg = getBestSol(pop);
-        best = getBestSol(pop);
 
         while (i < nbrIter && bestg.getFitness() != 0) {
 
-            parents.clear();
             parents.addAll(Selection(pop, methodeSel, taillesouspop));
             children = new ArrayList<>();
 
@@ -203,14 +188,13 @@ public class GA {
                 children.add(Mutation(children.get(children.size() - 1), tauxM));
                 children.add(Mutation(children.get(children.size() - 2), tauxM));
 
-                EvaluationPop(children);
-                best = getBestSol(children);
-
             }
-
+            EvaluationPop(children);
+            best = getBestSol(children);
             if (bestg.getFitness() > best.getFitness()) {
                 bestg.setSolution(best.getSolution());
             }
+            parents.clear();
             pop = Remplacement(pop, children, methodeRep);
             i++;
         }

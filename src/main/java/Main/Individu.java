@@ -13,16 +13,12 @@ public class Individu {
         return longevite;
     }
 
-    public void setLongevite(int longevite) {
-        this.longevite = longevite;
-    }
-
     public int getFitness() {
         return fitness;
     }
 
     public void setFitness() {
-        this.fitness = this.evaluation2();
+        this.fitness = this.cal_fitness();
     }
 
     public void setSolution(IntArrayList Solution) {
@@ -38,31 +34,38 @@ public class Individu {
         this.Solution = Solution;
     }
 
-    public int evaluation2() {
-        int c = 0;
-        for (int i = 0; i < Solution.size(); i++) {
-            for (int j = i + 1; j < Solution.size(); j++) {
-                if (j - i == Math.abs(Solution.getInt(i) - Solution.getInt(j))) c++;
-                if (Solution.getInt(i) == Solution.getInt(j)) c++;
-            }
-        }
-        return c;
-    }
-
     public IntArrayList getSolution() {
         return Solution;
     }
 
-    public static IntArrayList generateRandomState(int p) {
+    public static boolean threatens(int i1, int j1, int i2, int j2) {
+        return (j1 == j2) || (Math.abs(i1 - i2) == Math.abs(j1 - j2));
+    }
 
-        LinkedHashSet<Integer> uniqueArray = new LinkedHashSet<>();
-        while (uniqueArray.size() != p) {
-
-            uniqueArray.add((int) Math.floor(Math.random() * p));
-
+    public  static IntArrayList generateRandomSol(int n) {
+        IntArrayList state = new IntArrayList();
+        for (int i = 0; i < n; i++) {
+            var rnd = (int) (Math.random() * n);
+            if (!state.contains(rnd)) {
+                state.add(rnd);
+            } else {
+                i--;
+            }
         }
-        IntArrayList S = new IntArrayList(uniqueArray);
-        return S;
+        return state;
+    }
+
+    public Integer cal_fitness() {
+        int threatened = 0;
+        for (int i = 0; i <n; i++) {
+            for (int j = i + 1; j <n; j++) {
+                if (threatens(i, this.getSolution().getInt(i), j, this.getSolution().getInt(j))) {
+                    threatened++;
+                }
+            }
+        }
+        return threatened;
+
     }
 }
 
