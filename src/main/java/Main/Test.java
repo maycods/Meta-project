@@ -52,12 +52,12 @@ public class Test {
     /*int  taillepop=100,nbriter=100,methS=3,methR=1,nbrpointC=3;
         double tauxM=0.1;*/
             int nbr=0,nbr2=0,moy=0,moy2=0;
-            PSO P = new PSO();
+            PSO P = new PSO(20);
             GA g = new GA();
             // double taillepopp=M.factorial((long) 10.0)/10;
             //System.out.println(taillepopp);
            // for(int i=0;i<100;i++) {
-                 Individu  pso = P.search(10,100,100);//700 500 3 1 2 0.017
+                 Individu  pso = P.search(10,15,0.4,0.3);//700 500 3 1 2 0.017
 
 
 
