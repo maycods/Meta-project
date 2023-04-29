@@ -118,7 +118,13 @@
                         <TextField id="nbrpnt" layoutX="174.0" layoutY="293.0" prefHeight="25.0" prefWidth="40.0" />
 
 
-                        </children>
+                        <Label id="Tsouspop" layoutX="3.0" layoutY="330.0" prefHeight="21.0" styleClass="text-class"  prefWidth="56.0" text="Tsouspop" textFill="WHITE" />
+                        <TextField id="tsspop" layoutX="61.0" layoutY="333.0" prefHeight="25.0" prefWidth="40.0" />
+
+                        <Label id="tauc" layoutX="110.0" layoutY="330.0" prefHeight="21.0" styleClass="text-class"  prefWidth="56.0" text="TauC" textFill="WHITE" />
+                        <TextField id="toc" layoutX="172.0" layoutY="333.0" prefHeight="25.0" prefWidth="40.0" />
+
+                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="342.0" prefWidth="189.0">
                             <children>

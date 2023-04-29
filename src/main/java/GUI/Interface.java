@@ -42,11 +42,16 @@ public class  Interface  extends Application {
         TextField remplacement = (TextField)scene.lookup("#remp");
         TextField nbrpnt = (TextField)scene.lookup("#nbrpnt");
 
+        TextField sspopT = (TextField)scene.lookup("#tsspop");
+        TextField taucT = (TextField)scene.lookup("#toc");
 
-        mut.setText("0.5");
+
+        mut.setText("0.3");
         selection.setText("1");
         remplacement.setText("1");
         nbrpnt.setText("3");
+        sspopT.setText("50");
+        taucT.setText("0.7");
 
         Label nbiterLabel = (Label) scene.lookup("#nbiterl");
         Label tpopLabel = (Label) scene.lookup("#tpopl");
@@ -54,6 +59,9 @@ public class  Interface  extends Application {
         Label selectLabel = (Label) scene.lookup("#selectl");
         Label remplacementLabel = (Label) scene.lookup("#rempl");
         Label nbrpoint = (Label) scene.lookup("#nbrpnts");
+
+        Label souspopL = (Label) scene.lookup("#Tsouspop");
+        Label taucL = (Label) scene.lookup("#tauc");
 
         remplacementLabel.setVisible(false);
         nbiterLabel.setVisible(false);
@@ -67,6 +75,10 @@ public class  Interface  extends Application {
         remplacement.setVisible(false);
         nbrpoint.setVisible(false);
         nbrpnt.setVisible(false);
+        taucL.setVisible(false);
+        taucT.setVisible(false);
+        sspopT.setVisible(false);
+        souspopL.setVisible(false);
 
 
         Text devTOnothing  = (Text)scene.lookup("#data1");
@@ -85,26 +97,27 @@ public class  Interface  extends Application {
         MenuItem GA=choix.getItems().get(4);
         MenuItem PSO=choix.getItems().get(5);
 
-        setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
+        setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint, sspopT,taucT, souspopL, taucL);
          bfs.setOnAction(event ->{
-            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint, sspopT,taucT, souspopL, taucL);
             choix.setText(bfs.getText());
         });
         dfs.setOnAction(event ->{
-            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel,  remplacementLabel,remplacement, nbrpnt, nbrpoint);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel,  remplacementLabel,remplacement, nbrpnt, nbrpoint, sspopT,taucT, souspopL, taucL);
              choix.setText(dfs.getText());
         });
         h1.setOnAction(event -> {
             choix.setText(h1.getText());
-            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint, sspopT,taucT, souspopL, taucL);
            });
         h2.setOnAction(event -> {
             choix.setText(h2.getText());
-            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint, sspopT,taucT, souspopL, taucL);
           });
         GA.setOnAction(event -> {
-            nbiter.setText("1000");
-            nbpop.setText("500");
+            nbiter.setText("100");
+            nbpop.setText("100");
+
 
             choix.setText(GA.getText());
             nbiterLabel.setVisible(true);
@@ -119,12 +132,16 @@ public class  Interface  extends Application {
             remplacement.setVisible(true);
             nbrpnt.setVisible(true);
             nbrpoint.setVisible(true);
+            taucL.setVisible(true);
+            taucT.setVisible(true);
+            sspopT.setVisible(true);
+            souspopL.setVisible(true);
         });
         PSO.setOnAction(event -> {
-            nbiter.setText("1000");
-            nbpop.setText("500");
+            nbiter.setText("100");
+            nbpop.setText("100");
 
-            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint);
+            setVisible(choix, nbiter, nbpop, mut, selection, nbiterLabel, tpopLabel, mutLabel, selectLabel, remplacementLabel,remplacement, nbrpnt, nbrpoint, sspopT,taucT, souspopL, taucL);
             choix.setText(PSO.getText());
             nbpop.setVisible(true);
             tpopLabel.setVisible(true);
@@ -218,9 +235,11 @@ public class  Interface  extends Application {
                          var method = Integer.parseInt(selection.getText());
                          var rempval = Integer.parseInt(remplacement.getText());
                          var nombrepnt = Integer.parseInt(nbrpnt.getText());
+                         var tauxC = Double.parseDouble(taucT.getText());
+                         var taillsoupop = Integer.parseInt(sspopT.getText());
 
                         start = System.currentTimeMillis();
-                        Individu pa = M.Lancer(a,nbpopVal, nbiterVal, mutval, method, rempval, nombrepnt);
+                        Individu pa = M.Lancer(a,nbpopVal,nbiterVal,mutval,method,rempval,nombrepnt,tauxC,taillsoupop);
                         end = System.currentTimeMillis();
                         bestSol=pa.getSolution();
                         System.out.println(bestSol.toString());
@@ -255,8 +274,10 @@ public class  Interface  extends Application {
 
     }
 
-    private void setVisible(MenuButton choix, TextField nbiter, TextField nbpop, TextField mut, TextField selection, Label nbiterLabel, Label tpopLabel, Label mutLabel, Label selectLabel, Label l, TextField t
-     ,TextField nbrpnt, Label nbrpoint) {
+    private void setVisible(MenuButton choix, TextField nbiter, TextField nbpop,
+                            TextField mut, TextField selection, Label nbiterLabel,
+                            Label tpopLabel, Label mutLabel, Label selectLabel, Label l,
+                            TextField t,TextField nbrpnt, Label nbrpoint,TextField sspopT,TextField taucT,Label souspopL,Label taucL) {
             nbiterLabel.setVisible(false);
             nbpop.setVisible(false);
             mut.setVisible(false);
@@ -269,6 +290,10 @@ public class  Interface  extends Application {
             t.setVisible(false);
             nbrpnt.setVisible(false);
             nbrpoint.setVisible(false);
+            taucL.setVisible(false);
+            taucT.setVisible(false);
+            sspopT.setVisible(false);
+            souspopL.setVisible(false);
     }
 
     public static void main(String[] args) {
