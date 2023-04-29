@@ -176,63 +176,106 @@
 
 package Main;
 
-import java.util.ArrayList;
-
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 
-public class  Noeud {
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Noeud {
 
     public static int n;
     private IntArrayList etat;
     private int profondeur, f;
 
-    public boolean verification(){
-        if (etat.size()!= n) return false;
+    public boolean verification() {
+        if (etat.size() != n) return false;
         return true;
     }
-    public boolean evaluation(){
-        for (int i = 0; i <etat.size(); i++) {
+
+    public boolean evaluation() {
+        for (int i = 0; i < etat.size(); i++) {
             for (int j = i + 1; j < etat.size(); j++) {
                 if (j - i == Math.abs(etat.getInt(i) - etat.getInt(j))) return false;
             }
         }
         return true;
     }
+
     public Noeud(IntArrayList etat) {
         this.etat = etat;
     }
-    public Noeud(IntArrayList etat,int profondeur) {
+
+    public Noeud(IntArrayList etat, int profondeur) {
         this.etat = etat;
-        this.profondeur=profondeur;
+        this.profondeur = profondeur;
     }
+
     public int getF() {
         return f;
     }
+
     public void setF(int f) {
         this.f = f;
     }
+
     public IntArrayList getEtat() {
         return etat;
     }
+
     public int getProfondeur() {
         return profondeur;
     }
+
     public ArrayList<Noeud> getNoeudEnfants() {
 
-        ArrayList<Noeud> childs  = new ArrayList<Noeud>();
-        for(int i=0;i<n;i++) {
-            if (!etat.contains(i)){
+        ArrayList<Noeud> childs = new ArrayList<Noeud>();
+        for (int i = 0; i < n; i++) {
+            if (!etat.contains(i)) {
                 childs.add(new Noeud(copyWithIncreasedSize(i), this.profondeur + 1));
             }
         }
         return childs;
     }
-    public IntArrayList copyWithIncreasedSize(int newElement){
+
+    public IntArrayList copyWithIncreasedSize(int newElement) {
         IntArrayList copy = etat.clone();
         copy.add(newElement);
         return copy;
     }
 
+    //////////////////////////////////////////////////////////////////////////////////////////
+    public static boolean threatens(int i1, int j1, int i2, int j2) {
+        return (j1 == j2) || (Math.abs(i1 - i2) == Math.abs(j1 - j2));
+    }
+
+    public static IntArrayList generateRandomState(int n) {
+        IntArrayList state = new IntArrayList();
+        for (int i = 0; i < n; i++) {
+            var rnd = (int) (Math.random() * n);
+            if (!state.contains(rnd)) {
+                state.add(rnd);
+            } else {
+                i--;
+            }
+        }
+        return state;
+    }
+
+    public Integer cal_fitness() {
+        int threatened = 0;
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (threatens(i, etat.get(i), j, etat.get(j))) {
+                    threatened++;
+                }
+            }
+        }
+        return threatened;
+
+    }
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 
 }

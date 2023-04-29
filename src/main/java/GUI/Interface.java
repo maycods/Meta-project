@@ -45,8 +45,13 @@ public class  Interface  extends Application {
         TextField sspopT = (TextField)scene.lookup("#tsspop");
         TextField taucT = (TextField)scene.lookup("#toc");
 
-
-        mut.setText("0.3");
+        TextField C1 = (TextField) scene.lookup("#c1");
+        TextField C2 = (TextField) scene.lookup("#c2");
+        C1.setText("0.5");
+        C2.setText("0.6");
+        nbiter.setText("2000");
+        nbpop.setText("500");
+        mut.setText("0.5");
         selection.setText("1");
         remplacement.setText("1");
         nbrpnt.setText("3");
@@ -58,6 +63,8 @@ public class  Interface  extends Application {
         Label mutLabel = (Label) scene.lookup("#mutl");
         Label selectLabel = (Label) scene.lookup("#selectl");
         Label remplacementLabel = (Label) scene.lookup("#rempl");
+        Label C1l = (Label) scene.lookup("#c1l");
+        Label C2l = (Label) scene.lookup("#c2l");
         Label nbrpoint = (Label) scene.lookup("#nbrpnts");
 
         Label souspopL = (Label) scene.lookup("#Tsouspop");
@@ -119,6 +126,10 @@ public class  Interface  extends Application {
             nbpop.setText("100");
 
 
+            C1.setVisible(false);
+            C2.setVisible(false);
+            C1l.setVisible(false);
+            C2l.setVisible(false);
             choix.setText(GA.getText());
             nbiterLabel.setVisible(true);
             nbpop.setVisible(true);
@@ -147,6 +158,10 @@ public class  Interface  extends Application {
             tpopLabel.setVisible(true);
             nbiter.setVisible(true);
             nbiterLabel.setVisible(true);
+            C1.setVisible(true);
+            C2.setVisible(true);
+            C1l.setVisible(true);
+            C2l.setVisible(true);
         });
 
         textField.textProperty().addListener((observable, oldValue, newValue) -> {
@@ -157,17 +172,17 @@ public class  Interface  extends Application {
         });
 
         Go.setOnAction(event -> {
-            b=false;
-            sp= (ScrollPane) scene.lookup("#t");
+            b = false;
+            sp = (ScrollPane) scene.lookup("#t");
             content = sp.getContent();
             String newText = textField.getText();
 
 
             int a = parseInt(newText);//TODO ADD EXCEPTION OR SMTHG EN CAS OU MKCH NUMBER ENTERED
             Noeud.n = a;
-            IntArrayList bestSol=null;
+            IntArrayList bestSol = null;
 
-            if(a<6){
+            if (a < 6) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("valeur trop petite de n");
                 alert.setHeaderText(null);
@@ -185,47 +200,48 @@ public class  Interface  extends Application {
                     case "DFS":
                         DFS algoDfs = new DFS();
                         start = System.currentTimeMillis();
-                        bestSol=  algoDfs.Recherche(new Noeud(new IntArrayList(0)));
+                        bestSol = algoDfs.Recherche(new Noeud(new IntArrayList(0)));
                         end = System.currentTimeMillis();
-                        dev=algoDfs.nbrNdev;
-                        gen=algoDfs.nbrNgen;
+                        dev = algoDfs.nbrNdev;
+                        gen = algoDfs.nbrNgen;
                         break;
                     case "BFS":
                         BFS algoBfs = new BFS();
                         start = System.currentTimeMillis();
-                        bestSol=algoBfs.Recherche(new Noeud(new IntArrayList(0),0));
+                        bestSol = algoBfs.Recherche(new Noeud(new IntArrayList(0), 0));
                         end = System.currentTimeMillis();
-                        dev=algoBfs.nbrNdev;
-                        gen=algoBfs.nbrNgen;
+                        dev = algoBfs.nbrNdev;
+                        gen = algoBfs.nbrNgen;
 
                         break;
                     case "heuristique 1 ":
                         Astar A = new Astar();
                         start = System.currentTimeMillis();
-                        bestSol=A.Recherche(new Noeud(new IntArrayList(0),0),1);
+                        bestSol = A.Recherche(new Noeud(new IntArrayList(0), 0), 1);
                         end = System.currentTimeMillis();
-                        dev=A.nbrNdev;
-                        gen=A.nbrNgen;
+                        dev = A.nbrNdev;
+                        gen = A.nbrNgen;
                         break;
                     case "heuristique 2":
                         Astar B = new Astar();
                         start = System.currentTimeMillis();
-                        bestSol=B.Recherche(new Noeud(new IntArrayList(0),0),2);
+                        bestSol = B.Recherche(new Noeud(new IntArrayList(0), 0), 2);
                         end = System.currentTimeMillis();
-                        dev=B.nbrNdev;
-                        gen=B.nbrNgen;
+                        dev = B.nbrNdev;
+                        gen = B.nbrNgen;
                         break;
                     case "PSO"://TODO in case of meta 9alek lzm nkhelou l user il choisis les parametres si il veut sinon par default imed le meilleur
-                        PSO pso = new PSO();
-
-                        var nbpopVal = (int)Integer.parseInt(nbpop.getText());
-                        var nbiterVal = (int)Integer.parseInt(nbiter.getText());
+                        PSO pso = new PSO(a);
                         start = System.currentTimeMillis();
-                        Individu p = pso.search(a, nbpopVal, nbiterVal);
+                        var nbpopVal = (int) Integer.parseInt(nbpop.getText());
+                        var nbiterVal = (int) Integer.parseInt(nbiter.getText());
+                        var c1val = Double.parseDouble(C1.getText());
+                        var c2val = Double.parseDouble(C2.getText());
+                        Individu p = pso.search(nbpopVal, nbiterVal, c1val, c2val);
+                        bestSol = p.getSolution();
                         end = System.currentTimeMillis();
-                        bestSol=p.getSolution();
-                        genTOevaluation.setText("nombre de reines en dangers: "+p.evaluation2());
-                        b=true;
+                        genTOevaluation.setText("nombre de reines en dangers: " + p.evaluation2());
+                        b = true;
                         break;
                     case "GA":
                         GA M =new GA();
@@ -250,13 +266,13 @@ public class  Interface  extends Application {
                     default:
                         bestSol = new IntArrayList(a);
                 }
-                exe.setText((double)(end-start) + " ms");
-                if(!b){
+                exe.setText((double) (end - start) + " ms");
+                if (!b) {
                     devTOnothing.setText("nombre de noeuds developpés:");
                     genTOevaluation.setText("nombre de noeuds generés:");
                     ngen.setText(gen + "");
                     ndev.setText(dev + "");
-                }else{
+                } else {
                     devTOnothing.setText(" ");
                     ngen.setText("");
                     ndev.setText("");
@@ -264,7 +280,7 @@ public class  Interface  extends Application {
 
                 if (content instanceof AnchorPane) {
                     ap = (AnchorPane) content;
-                    ChessBoard chessBoard = new ChessBoard(a, bestSol,ap.getWidth(), ap.getHeight());
+                    ChessBoard chessBoard = new ChessBoard(a, bestSol, ap.getWidth(), ap.getHeight());
                     ap.getChildren().clear();
                     ap.getChildren().add(chessBoard);
                 }
@@ -274,20 +290,21 @@ public class  Interface  extends Application {
 
     }
 
-    private void setVisible(MenuButton choix, TextField nbiter, TextField nbpop,
-                            TextField mut, TextField selection, Label nbiterLabel,
-                            Label tpopLabel, Label mutLabel, Label selectLabel, Label l,
-                            TextField t,TextField nbrpnt, Label nbrpoint,TextField sspopT,TextField taucT,Label souspopL,Label taucL) {
-            nbiterLabel.setVisible(false);
-            nbpop.setVisible(false);
-            mut.setVisible(false);
-            selection.setVisible(false);
-            nbiter.setVisible(false);
-            tpopLabel.setVisible(false);
-            mutLabel.setVisible(false);
-            selectLabel.setVisible(false);
-            l.setVisible(false);
-            t.setVisible(false);
+    private void setVisible(MenuButton choix, TextField nbiter, TextField nbpop, TextField mut, TextField selection, Label nbiterLabel, Label tpopLabel, Label mutLabel, Label selectLabel, Label l, TextField t, TextField c1, TextField c2, Label l1, Label l2) {
+        nbiterLabel.setVisible(false);
+        nbpop.setVisible(false);
+        mut.setVisible(false);
+        selection.setVisible(false);
+        nbiter.setVisible(false);
+        tpopLabel.setVisible(false);
+        mutLabel.setVisible(false);
+        selectLabel.setVisible(false);
+        l.setVisible(false);
+        t.setVisible(false);
+        c1.setVisible(false);
+        c2.setVisible(false);
+        l1.setVisible(false);
+        l2.setVisible(false);
             nbrpnt.setVisible(false);
             nbrpoint.setVisible(false);
             taucL.setVisible(false);
