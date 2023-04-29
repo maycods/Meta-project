@@ -33,7 +33,7 @@ public class PSO {
                 gBestFitness = population.get(i).cal_fitness();
             }
         }
-        System.out.println("gBest = " + gBest + " " + gBestFitness);
+       // System.out.println("gBest = " + gBest + " " + gBestFitness);
 
 
 
@@ -48,15 +48,17 @@ public class PSO {
                 } else {
                     population.set(j,croisement(pBest.get(j), population.get((int) Math.floor(Math.random() * population.size())).getSolution()));//avec rdm de la popp
                 }
+
+
                 var fit = population.get(j).cal_fitness();
                 if (fit < pBestFitness.get(j)) {
                     pBest.set(j, population.get(j).getSolution());
                     pBestFitness.set(j, fit);
-                    if (fit < gBestFitness) {
-                        System.out.println("i = " + i + " j = " + j);
-                        System.out.println("gBest = " + gBest + " ");
-                        System.out.println("gBestFitness = " + gBestFitness);
-                    }
+                    /*if (fit < gBestFitness) {
+                     //   System.out.println("i = " + i + " j = " + j);
+                       // System.out.println("gBest = " + gBest + " ");
+                       // System.out.println("gBestFitness = " + gBestFitness);
+                    }*/
                     if (fit <= gBestFitness) {
                         gBest = pBest.get(j);
                         gBestFitness = fit;
@@ -69,10 +71,10 @@ public class PSO {
         }
 
 
-        System.out.println("iteration " + i);
-        System.out.println("gBest = " + gBest);
+        /*System.out.println("iteration " + i);
+        System.out.println("gBest = " + gBest);*/
         Individu x = new Individu(gBest);
-        System.out.println("gBestFitness = " + gBestFitness);
+      //  System.out.println("gBestFitness = " + x.cal_fitness());
         return x;
     }
 

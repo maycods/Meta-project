@@ -3,7 +3,7 @@ package Main;
 public class Test {
 
 
-    public static void main(String[] args) throws CloneNotSupportedException {
+    public static void main(String[] args)  {
 
            /* int problemsize=100;
             int  taillepop=90,nbriter=20,methS=3,methR=1,nbrpointC=3;
@@ -47,29 +47,14 @@ public class Test {
             }
         }*/
 
-    /*int  taillepop=100,nbriter=100,methS=3,methR=1,nbrpointC=3;
-        double tauxM=0.1;*/
-        int nbr = 0, nbr2 = 0, moy = 0, moy2 = 0;
-        PSO P = new PSO(300);
+        PSO P = new PSO(30);
         GA g = new GA();
-        // double taillepopp=M.factorial((long) 10.0)/10;
-        //System.out.println(taillepopp);
-        // for(int i=0;i<100;i++) {
-        Individu pso = P.search(8000, 2000, 0.5, 0.4);//700 500 3 1 2 0.017
-//System.out.println(pso.evaluation2());
+        Individu pso = P.search(1000, 1000, 0.5, 0.4);//700 500 3 1 2 0.017
+        Individu pa = g.Lancer(30, 1000, 1000, 0.5, 1, 1, 2, 0.3, 700);
 
-       // System.out.println(g.Lancer(10, 100, 100, 0.5, 1, 1, 3, 0.7, 50).evaluation2());
-         /*
-                moy+=ga.evaluation2();
-                moy2+=pso.evaluation2();
-                if(ga.evaluation2()==0) nbr2++;
-                if(pso.evaluation2()==0) nbr++;*/
-        // }
-       /* System.out.println(p.evaluation2());
-        System.out.println(p.getEtat().toString());*/
-        System.out.println(moy / 100 + " " + nbr2);
-        System.out.println(moy2 / 100 + " " + nbr);
 
+        System.out.println("fitness pso "+pso.cal_fitness());
+        System.out.println("fitness ga "+pa.cal_fitness());
 
     }
 

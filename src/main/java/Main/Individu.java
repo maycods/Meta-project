@@ -34,11 +34,12 @@ public class Individu {
         this.Solution = Solution;
     }
 
+
     public IntArrayList getSolution() {
         return Solution;
     }
 
-    public static boolean threatens(int i1, int j1, int i2, int j2) {
+    public boolean threatens(int i1, int j1, int i2, int j2) {
         return (j1 == j2) || (Math.abs(i1 - i2) == Math.abs(j1 - j2));
     }
 
@@ -57,8 +58,8 @@ public class Individu {
 
     public Integer cal_fitness() {
         int threatened = 0;
-        for (int i = 0; i <n; i++) {
-            for (int j = i + 1; j <n; j++) {
+        for (int i = 0; i <getSolution().size(); i++) {
+            for (int j = i + 1; j <getSolution().size(); j++) {
                 if (threatens(i, this.getSolution().getInt(i), j, this.getSolution().getInt(j))) {
                     threatened++;
                 }
