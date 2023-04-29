@@ -112,8 +112,8 @@
                                 <Label id="mutl" layoutX="110.0" layoutY="257.0" prefHeight="21.0" prefWidth="56.0"
                                        text="mut" textFill="WHITE"/>
                                 <TextField id="mut" layoutX="174.0" layoutY="254.0" prefHeight="25.0" prefWidth="40.0"/>
-                                <Label id="rempl" layoutX="54.0" layoutY="295.0" text="rempl." textFill="WHITE"/>
-                                <TextField id="remp" layoutX="112.0" layoutY="293.0" prefHeight="25.0"
+                                <Label id="rempl" layoutX="5.0" layoutY="295.0" text="rempl." textFill="WHITE"/>
+                                <TextField id="remp" layoutX="61.0" layoutY="293.0" prefHeight="25.0"
                                            prefWidth="40.0"/>
                                 <Label id="c1l" layoutX="5.0" layoutY="295.0" text="C1" textFill="WHITE"/>
                                 <TextField id="c1" layoutX="63.0" layoutY="293.0" prefHeight="25.0" prefWidth="40.0"/>

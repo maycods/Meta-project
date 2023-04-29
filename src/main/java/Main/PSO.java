@@ -77,7 +77,7 @@ public class PSO {
         int partition = (int) Math.floor(Math.random() * Noeud1.size() / 4);
 
         var rnd = Math.random();
-        if (rnd < 0.40) {
+        if (rnd < 0.5) {
             for (int i = 0; i < partition; i++) {
                 child.add(Noeud1.getInt(i));
             }
@@ -102,14 +102,14 @@ public class PSO {
                 j++;
                 j = j % Noeud1.size();
             }
-            // swap two random elements
-            int index1 = (int) Math.floor(Math.random() * Noeud1.size());
-            int index2 = (int) Math.floor(Math.random() * Noeud1.size());
-            int temp1 = child.get(index1);
-            int temp2 = child.get(index2);
-            child.set(index1, temp2);
-            child.set(index2, temp1);
         }
+        // swap two random elements
+        int index1 = (int) Math.floor(Math.random() * Noeud1.size());
+        int index2 = (int) Math.floor(Math.random() * Noeud1.size());
+        int temp1 = child.get(index1);
+        int temp2 = child.get(index2);
+        child.set(index1, temp2);
+        child.set(index2, temp1);
         return new Noeud(child);
     }
 

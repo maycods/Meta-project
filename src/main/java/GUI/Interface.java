@@ -51,10 +51,8 @@ public class Interface extends Application {
         TextField C1 = (TextField) scene.lookup("#c1");
         TextField C2 = (TextField) scene.lookup("#c2");
         C1.setText("0.5");
-        C2.setText("0.6");
-        nbiter.setText("2000");
-        nbpop.setText("500");
-        mut.setText("0.5");
+        C2.setText("0.4");
+        mut.setText("0.3");
         selection.setText("1");
         remplacement.setText("1");
         nbrpnt.setText("3");
@@ -155,8 +153,8 @@ public class Interface extends Application {
             souspopL.setVisible(true);
         });
         PSO.setOnAction(event -> {
-            nbiter.setText("100");
-            nbpop.setText("100");
+            nbiter.setText("2000");
+            nbpop.setText("200");
 
             setInvisible(elts);
             choix.setText(PSO.getText());

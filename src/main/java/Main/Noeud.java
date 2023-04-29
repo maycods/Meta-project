@@ -246,7 +246,6 @@ public class Noeud {
     public static boolean threatens(int i1, int j1, int i2, int j2) {
         return (j1 == j2) || (Math.abs(i1 - i2) == Math.abs(j1 - j2));
     }
-
     public static IntArrayList generateRandomState(int n) {
         IntArrayList state = new IntArrayList();
         for (int i = 0; i < n; i++) {
@@ -259,7 +258,6 @@ public class Noeud {
         }
         return state;
     }
-
     public Integer cal_fitness() {
         int threatened = 0;
         for (int i = 0; i < n; i++) {
