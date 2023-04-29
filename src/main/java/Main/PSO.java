@@ -19,7 +19,7 @@ public class PSO {
         population = new ArrayList<Noeud>();
         pBest = new ArrayList<>();
         ArrayList<Integer> pBestFitness = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < nbPop; i++) {
             var rand = Noeud.generateRandomState(n);
             var copie = (IntArrayList) rand.clone();
 
@@ -34,7 +34,7 @@ public class PSO {
         System.out.println("gBest = " + gBest + " " + gBestFitness);
         int i = 0;
         while (i < nbIteration) {
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < nbPop; j++) {
                 double r1 = Math.random();
                 if (r1 < c1) {
                     population.set(j, croisement(population.get(j).getEtat(), gBest));
@@ -74,10 +74,10 @@ public class PSO {
     private static Noeud croisement(IntArrayList Noeud1, IntArrayList Noeud2) {
         IntArrayList child = new IntArrayList();
         //partition the parents into 2 parts and then swap them
-        int partition = (int) Math.floor(Math.random() * Noeud1.size() /4);
+        int partition = (int) Math.floor(Math.random() * Noeud1.size() / 4);
 
         var rnd = Math.random();
-        if (rnd < 0.30) {
+        if (rnd < 0.40) {
             for (int i = 0; i < partition; i++) {
                 child.add(Noeud1.getInt(i));
             }

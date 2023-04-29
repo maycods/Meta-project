@@ -33,19 +33,10 @@
 -->
 
 <?import javafx.scene.AmbientLight?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <VBox prefHeight="732.0" prefWidth="973.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
     <children>
 
@@ -128,15 +119,20 @@
                                 <TextField id="c1" layoutX="63.0" layoutY="293.0" prefHeight="25.0" prefWidth="40.0"/>
                                 <Label id="c2l" layoutX="115.0" layoutY="295.0" text="C2" textFill="WHITE"/>
                                 <TextField id="c2" layoutX="173.0" layoutY="293.0" prefHeight="25.0" prefWidth="40.0"/>
-                                <Label id="nbrpnts" layoutX="110.0" layoutY="295.0" prefHeight="21.0" styleClass="text-class"  prefWidth="56.0" text="nbrpnt" textFill="WHITE" />
-                                <TextField id="nbrpnt" layoutX="174.0" layoutY="293.0" prefHeight="25.0" prefWidth="40.0" />
+                                <Label id="nbrpnts" layoutX="110.0" layoutY="295.0" prefHeight="21.0"
+                                       styleClass="text-class" prefWidth="56.0" text="nbrpnt" textFill="WHITE"/>
+                                <TextField id="nbrpnt" layoutX="174.0" layoutY="293.0" prefHeight="25.0"
+                                           prefWidth="40.0"/>
 
 
-                                <Label id="Tsouspop" layoutX="3.0" layoutY="330.0" prefHeight="21.0" styleClass="text-class"  prefWidth="56.0" text="Tsouspop" textFill="WHITE" />
-                                <TextField id="tsspop" layoutX="61.0" layoutY="333.0" prefHeight="25.0" prefWidth="40.0" />
+                                <Label id="Tsouspop" layoutX="3.0" layoutY="330.0" prefHeight="21.0"
+                                       styleClass="text-class" prefWidth="56.0" text="Tsouspop" textFill="WHITE"/>
+                                <TextField id="tsspop" layoutX="61.0" layoutY="333.0" prefHeight="25.0"
+                                           prefWidth="40.0"/>
 
-                                <Label id="tauc" layoutX="110.0" layoutY="330.0" prefHeight="21.0" styleClass="text-class"  prefWidth="56.0" text="TauC" textFill="WHITE" />
-                                <TextField id="toc" layoutX="172.0" layoutY="333.0" prefHeight="25.0" prefWidth="40.0" />
+                                <Label id="tauc" layoutX="110.0" layoutY="330.0" prefHeight="21.0"
+                                       styleClass="text-class" prefWidth="56.0" text="TauC" textFill="WHITE"/>
+                                <TextField id="toc" layoutX="172.0" layoutY="333.0" prefHeight="25.0" prefWidth="40.0"/>
                             </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="342.0" prefWidth="189.0">
@@ -161,7 +157,9 @@
                                         <Font name="Comic Sans MS" size="18.0"/>
                                     </font>
                                 </Text>
-                                <Text fx:id="data111" fill="WHITE" layoutX="11.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="temp d'execution : " wrappingWidth="144.0">
+                                <Text fx:id="data111" fill="WHITE" layoutX="11.0" layoutY="77.0" strokeType="OUTSIDE"
+                                      strokeWidth="0.0" styleClass="text" text="temp d'execution : "
+                                      wrappingWidth="144.0">
 
                                 </Text>
                                 <Text id="exe" fx:id="data2" fill="WHITE" layoutX="155.0" layoutY="78.0"

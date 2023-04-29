@@ -8,8 +8,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 
-import java.util.ArrayList;
-
 class ChessBoard extends GridPane {
     public ChessBoard(int size, IntArrayList sol, double width, double height) {
 

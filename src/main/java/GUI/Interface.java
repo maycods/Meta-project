@@ -1,29 +1,29 @@
 package GUI;
-import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
-import static java.lang.Integer.parseInt;
 
 import Main.*;
-import Main.Noeud;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.layout.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-public class  Interface  extends Application {
+import java.io.IOException;
+import java.util.ArrayList;
+
+import static java.lang.Integer.parseInt;
+
+public class Interface extends Application {
     Node content;
     AnchorPane ap;
     ScrollPane sp;
-    long start,end;
-    int dev,gen;
+    long start, end;
+    int dev, gen;
     Boolean b;
+
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -35,18 +35,18 @@ public class  Interface  extends Application {
         stage.show();
         stage.setTitle("N-REINES");
         Button Go = (Button) scene.lookup("#go");
-        MenuButton choix = (MenuButton)scene.lookup("#choose");
-        TextField textField = (TextField)scene.lookup("#taille");
+        MenuButton choix = (MenuButton) scene.lookup("#choose");
+        TextField textField = (TextField) scene.lookup("#taille");
 
-        TextField nbiter = (TextField)scene.lookup("#nbiter");
-        TextField nbpop = (TextField)scene.lookup("#tpop");
-        TextField mut = (TextField)scene.lookup("#mut");
-        TextField selection = (TextField)scene.lookup("#select");
-        TextField remplacement = (TextField)scene.lookup("#remp");
-        TextField nbrpnt = (TextField)scene.lookup("#nbrpnt");
+        TextField nbiter = (TextField) scene.lookup("#nbiter");
+        TextField nbpop = (TextField) scene.lookup("#tpop");
+        TextField mut = (TextField) scene.lookup("#mut");
+        TextField selection = (TextField) scene.lookup("#select");
+        TextField remplacement = (TextField) scene.lookup("#remp");
+        TextField nbrpnt = (TextField) scene.lookup("#nbrpnt");
 
-        TextField sspopT = (TextField)scene.lookup("#tsspop");
-        TextField taucT = (TextField)scene.lookup("#toc");
+        TextField sspopT = (TextField) scene.lookup("#tsspop");
+        TextField taucT = (TextField) scene.lookup("#toc");
 
         TextField C1 = (TextField) scene.lookup("#c1");
         TextField C2 = (TextField) scene.lookup("#c2");
@@ -97,40 +97,39 @@ public class  Interface  extends Application {
         setInvisible(elts);
 
 
+        Text devTOnothing = (Text) scene.lookup("#data1");
+        Text genTOevaluation = (Text) scene.lookup("#data11");
 
-        Text devTOnothing  = (Text)scene.lookup("#data1");
-        Text genTOevaluation = (Text)scene.lookup("#data11");
-
-        Text  exe = (Text)scene.lookup("#exe");
-        Text  ngen  = (Text)scene.lookup("#ngen");
-        Text  ndev = (Text)scene.lookup("#ndev");
+        Text exe = (Text) scene.lookup("#exe");
+        Text ngen = (Text) scene.lookup("#ngen");
+        Text ndev = (Text) scene.lookup("#ndev");
 
 
         choix.setText("Aucun");
         MenuItem bfs = choix.getItems().get(0);
-        MenuItem dfs=choix.getItems().get(1);
-        MenuItem h1=choix.getItems().get(2);
-        MenuItem h2=choix.getItems().get(3);
-        MenuItem GA=choix.getItems().get(4);
-        MenuItem PSO=choix.getItems().get(5);
+        MenuItem dfs = choix.getItems().get(1);
+        MenuItem h1 = choix.getItems().get(2);
+        MenuItem h2 = choix.getItems().get(3);
+        MenuItem GA = choix.getItems().get(4);
+        MenuItem PSO = choix.getItems().get(5);
 
-         bfs.setOnAction(event ->{
-             setInvisible(elts);
+        bfs.setOnAction(event -> {
+            setInvisible(elts);
             choix.setText(bfs.getText());
         });
-        dfs.setOnAction(event ->{
+        dfs.setOnAction(event -> {
             setInvisible(elts);
-             choix.setText(dfs.getText());
+            choix.setText(dfs.getText());
         });
         h1.setOnAction(event -> {
 
             choix.setText(h1.getText());
             setInvisible(elts);
-           });
+        });
         h2.setOnAction(event -> {
             choix.setText(h2.getText());
             setInvisible(elts);
-          });
+        });
         GA.setOnAction(event -> {
             nbiter.setText("100");
             nbpop.setText("100");
@@ -200,9 +199,7 @@ public class  Interface  extends Application {
                         ap.getChildren().clear();
                     }
                 });
-            }
-
-            else{
+            } else {
                 switch (choix.getText()) {
                     case "DFS":
                         DFS algoDfs = new DFS();
@@ -251,24 +248,24 @@ public class  Interface  extends Application {
                         b = true;
                         break;
                     case "GA":
-                        GA M =new GA();
-                         nbpopVal = Integer.parseInt(nbpop.getText());
-                         nbiterVal = Integer.parseInt(nbiter.getText());
-                         var mutval = Double.parseDouble(mut.getText());
-                         var method = Integer.parseInt(selection.getText());
-                         var rempval = Integer.parseInt(remplacement.getText());
-                         var nombrepnt = Integer.parseInt(nbrpnt.getText());
-                         var tauxC = Double.parseDouble(taucT.getText());
-                         var taillsoupop = Integer.parseInt(sspopT.getText());
+                        GA M = new GA();
+                        nbpopVal = Integer.parseInt(nbpop.getText());
+                        nbiterVal = Integer.parseInt(nbiter.getText());
+                        var mutval = Double.parseDouble(mut.getText());
+                        var method = Integer.parseInt(selection.getText());
+                        var rempval = Integer.parseInt(remplacement.getText());
+                        var nombrepnt = Integer.parseInt(nbrpnt.getText());
+                        var tauxC = Double.parseDouble(taucT.getText());
+                        var taillsoupop = Integer.parseInt(sspopT.getText());
 
                         start = System.currentTimeMillis();
-                        Individu pa = M.Lancer(a,nbpopVal,nbiterVal,mutval,method,rempval,nombrepnt,tauxC,taillsoupop);
+                        Individu pa = M.Lancer(a, nbpopVal, nbiterVal, mutval, method, rempval, nombrepnt, tauxC, taillsoupop);
                         end = System.currentTimeMillis();
-                        bestSol=pa.getSolution();
+                        bestSol = pa.getSolution();
                         System.out.println(bestSol.toString());
                         System.out.println(pa.evaluation2());
-                        genTOevaluation.setText("nombre de reines en dangers: "+(pa.evaluation2()));
-                        b=true;
+                        genTOevaluation.setText("nombre de reines en dangers: " + (pa.evaluation2()));
+                        b = true;
                         break;
                     default:
                         bestSol = new IntArrayList(a);
@@ -297,12 +294,11 @@ public class  Interface  extends Application {
 
     }
 
-    private  void setInvisible(ArrayList<Node> elts){
-        for (Node elt:elts) {
+    private void setInvisible(ArrayList<Node> elts) {
+        for (Node elt : elts) {
             elt.setVisible(false);
         }
     }
-
 
 
     public static void main(String[] args) {

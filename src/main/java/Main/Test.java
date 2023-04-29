@@ -1,7 +1,5 @@
 package Main;
 
-import java.util.Random;
-
 public class Test {
 
 
@@ -51,29 +49,28 @@ public class Test {
 
     /*int  taillepop=100,nbriter=100,methS=3,methR=1,nbrpointC=3;
         double tauxM=0.1;*/
-            int nbr=0,nbr2=0,moy=0,moy2=0;
-            PSO P = new PSO(20);
-            GA g = new GA();
-            // double taillepopp=M.factorial((long) 10.0)/10;
-            //System.out.println(taillepopp);
-           // for(int i=0;i<100;i++) {
-                 Individu  pso = P.search(10,15,0.4,0.3);//700 500 3 1 2 0.017
+        int nbr = 0, nbr2 = 0, moy = 0, moy2 = 0;
+        PSO P = new PSO(20);
+        GA g = new GA();
+        // double taillepopp=M.factorial((long) 10.0)/10;
+        //System.out.println(taillepopp);
+        // for(int i=0;i<100;i++) {
+        Individu pso = P.search(10, 15, 0.4, 0.3);//700 500 3 1 2 0.017
 
 
-
-                System.out.println(g.Lancer(10,100 ,100 ,0.5,1,1, 3,0.7,50).evaluation2());
+        System.out.println(g.Lancer(10, 100, 100, 0.5, 1, 1, 3, 0.7, 50).evaluation2());
          /*
                 moy+=ga.evaluation2();
                 moy2+=pso.evaluation2();
                 if(ga.evaluation2()==0) nbr2++;
                 if(pso.evaluation2()==0) nbr++;*/
-           // }
+        // }
        /* System.out.println(p.evaluation2());
         System.out.println(p.getEtat().toString());*/
-            System.out.println(moy/100+" "+nbr2);
-            System.out.println(moy2/100+" "+nbr);
+        System.out.println(moy / 100 + " " + nbr2);
+        System.out.println(moy2 / 100 + " " + nbr);
 
 
-        }
+    }
 
 }
